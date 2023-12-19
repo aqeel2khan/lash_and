@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cosmetics.lush.ui.products.product_details.productoption.ProductOptionsViewModel" />
+
+        <variable
+            name="optionValue"
+            type="com.cosmetics.domain.model.product.OptionValue" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkboxProductOption"
+            style="@style/TextLabelMediumDarkTittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{optionValue.getOptionNameWitPrice(viewModel.product.price)}"
+            android:textSize="@dimen/font_16" />
+
+    </FrameLayout>
+</layout>

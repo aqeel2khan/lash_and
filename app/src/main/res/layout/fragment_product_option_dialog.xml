@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dimen_24">
+
+            <TextView
+                style="@style/TextLabelDarkTittle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:gravity="center"
+                android:text="@string/available_options" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewProductOptions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:layout_marginBottom="@dimen/dimen_65"
+                android:background="?attr/selectableItemBackground"
+                android:paddingTop="@dimen/list_item_spacing_half"
+                android:paddingBottom="@dimen/list_item_spacing_half"
+                android:descendantFocusability="beforeDescendants"
+                android:focusable="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:text="Hello" />
+        </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addToCartButton"
+        style="@style/CommonDarkButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="@dimen/dimen_20"
+        android:layout_marginTop="@dimen/dimen_24"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:layout_marginBottom="@dimen/dimen_20"
+        android:paddingTop="@dimen/dimen_20"
+        android:paddingBottom="@dimen/dimen_20"
+        android:text="@string/add_to_cart"
+        android:textSize="@dimen/font_18" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

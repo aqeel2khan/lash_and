@@ -1,0 +1,297 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string-array name="governorate">
+        <item>Select a Governorate</item>
+        <item>Al Asimah Governorate</item>
+        <item>Hawalli Governorate</item>
+        <item>Farwaniya Governorate</item>
+        <item>Mubarak Al-Kabeer Governorate</item>
+        <item>Ahmadi Governorate</item>
+        <item>Jahra Governorate</item>
+    </string-array>
+
+    <string-array name="product_sort_by">
+        <item>Default</item>
+        <item>Name(A-Z)</item>
+        <item>Name(Z-A)</item>
+        <item>Price(Low > High)</item>
+        <item>Price(High > Low)</item>
+        <item>Rating(Highest)</item>
+        <item>Rating(Lowest)</item>
+        <item>Model(A-Z)</item>
+        <item>Model(Z-A)</item>
+    </string-array>
+    <string name="app_name">Lush</string>
+    <string name="thank_you_for_your_review">Thank you for your review. It has been submitted to the webmaster for approval.</string>
+    <string name="no_record_found">No record found</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="settings">Settings</string>
+    <string name="shop_now">Shop Now</string>
+    <string name="find_lush_stores">FIND LUSH STORES</string>
+    <string name="app">App</string>
+    <string name="about_us">About Us</string>
+    <string name="about_us_description">about_us.html</string>
+    <string name="return_refund_us">Refunds &amp; Returns</string>
+    <string name="return_refund_us_description">return_refund.html</string>
+    <string name="terms_conditions">Terms &amp; Conditions</string>
+    <string name="terms_conditions_description">terms_condition.html</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_policy_description">privacy_policy.html</string>
+    <string name="policies">Policies</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="newsletter">Newsletter</string>
+    <string name="careers_at_lush">Careers at Lush</string>
+    <string name="related_product">Related Products</string>
+    <string name="give_a_review">Give a review</string>
+    <string name="help_support">Help &amp; Support</string>
+    <string name="cool_off">Cool off</string>
+    <string name="banner_sub_title">with this summury collection</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="contact_us_help">Write us a note and we’ll get back to you as quickly as possible.</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="zone_id">Zone id</string>
+    <string name="whats_on_your_mind">Whats on your mind ?</string>
+    <string name="submit">SUBMIT</string>
+    <string name="push_notifications">Push Notifications</string>
+    <string name="profile_anonymous">Make your profile anonymous to others</string>
+    <string name="switch_to_arabic_version_of_the_app">Switch to Arabic Version of the app</string>
+    <string name="logout_of_lushkw_app">Logout of LushKW App</string>
+    <string name="product_name_1">Turtle Immersion</string>
+    <string name="product_sub_1">Turtle-y awesome bathing</string>
+    <string name="sort_by">Sort by</string>
+    <string name="filter">Filter</string>
+    <string name="type">Type</string>
+    <string name="others">Others</string>
+    <string name="availability">Availability</string>
+    <string name="availability_with_semicolon">Availability:</string>
+    <string name="user_profile">User Profile</string>
+    <string name="my_addresses">My Addresses</string>
+    <string name="save">Save</string>
+    <string name="checkout_now">Checkout Now</string>
+    <string name="apply">Apply</string>
+    <string name="remove">Remove</string>
+    <string name="eg_apr1234">EG APR1234</string>
+    <string name="have_a_promocode">Have a promocode?</string>
+    <string name="checkout">Checkout</string>
+    <string name="cash_on_delivery">Cash on Delivery</string>
+    <string name="proceed">Proceed</string>
+    <string name="shipping_cost">Shipping Cost</string>
+    <string name="item_price">Item Price</string>
+    <string name="discount_description">%s or more at %s</string>
+    <string name="discounts">Discounts</string>
+    <string name="total_cost">Total Cost</string>
+    <string name="total_cost_order_history">Total Cost : </string>
+    <string name="total">Total</string>
+    <string name="total_in_cart">Total - %s</string>
+    <string name="total_in_order_details">%1s %2s</string>
+    <string name="total_to_pay">Total to pay - %1s %2s</string>
+    <string name="timestamp_order_history">%1s at %2s</string>
+    <string name="cost_breakdown">%s  items - Cost Breakdown</string>
+    <string name="payment_options">Payment Options</string>
+    <string name="payment_address">Payment Address</string>
+    <string name="select_payment_address">Select Payment Address</string>
+    <string name="delivery_address">Delivery Address</string>
+    <string name="select_delivery_address">Select Delivery Address</string>
+    <string name="select_address">Select Address</string>
+    <string name="delivery_methods">Delivery Options</string>
+    <string name="change_address">Change address</string>
+    <string name="done">Done</string>
+    <string name="credit_debit_card">Credit Card / Debit Card</string>
+    <string name="knet">KNET</string>
+    <string name="recent_searches">Recent Searches</string>
+    <string name="current_orders">Current Orders</string>
+    <string name="previous_orders">Previous Orders</string>
+    <string name="order_id">ORDER ID</string>
+    <string name="placed_on">Placed on</string>
+    <string name="track_order">Track Order</string>
+    <string name="expected_delivery_on">Expected delivery on</string>
+    <string name="delivered">Delivered</string>
+    <string name="delivered_on">Delivered on</string>
+    <string name="order_status">Order Status</string>
+    <string name="expected_time_of_delivery">Expected time of delivery</string>
+    <string name="product_details">Product Details</string>
+    <string name="product_features">Product Features</string>
+    <string name="fresh_ingredient">Fresh Ingredient</string>
+    <string name="how_to_use">How to Use</string>
+    <string name="product_ratings_and_reviews">Product Ratings and Reviews</string>
+    <string name="see_all">See All</string>
+    <string name="more_in_this_category">More In This Category</string>
+    <string name="related_products">Related Products</string>
+    <string name="give_review">Give a Review</string>
+    <string name="write_a_review">Write a Review</string>
+    <string name="submit_review">Submit Review</string>
+    <string name="edit_address">Edit Address</string>
+    <string name="address_line_1">Address Line 1</string>
+    <string name="address_line_2">Address Line 2</string>
+    <string name="locality_landmark"><![CDATA[Locality & Landmark]]></string>
+    <string name="pincode">Post Code</string>
+    <string name="deliver_to">Deliver to</string>
+    <string name="my_address">My Address</string>
+    <string name="title_continue">Continue</string>
+
+    <string name="login">Login</string>
+    <string name="continue_as_guest">Continue as Guest</string>
+    <string name="skip">Skip</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="forgotten_password">Forgotten Password</string>
+    <string name="register">Register</string>
+    <string name="register_now">Register Now</string>
+    <string name="facebook_login">Facebook Login</string>
+    <string name="google_login">Google Login</string>
+    <string name="full_name">Full Name</string>
+    <string name="first_name">First Name </string>
+    <string name="first_name_mandatory">First Name*</string>
+    <string name="last_name_mandatory">Last Name*</string>
+    <string name="last_name">Last Name</string>
+    <string name="mobile_no">Telephone</string>
+    <string name="mobile_no_mandatory">Telephone*</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="otp_help">We have sent a 6 digit OTP to the registered number ******890. Please enter it below.
+    </string>
+    <string name="six_digit_otp">6 digit OTP</string>
+    <string name="verify_otp">VERIFY OTP</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="or">or</string>
+    <string name="recover_help">
+        Enter the e-mail address associated with your account. Click submit to have a password reset link e-mailed to you.
+    </string>
+    <string name="recover">Recover</string>
+    <string name="cancel">Cancel</string>
+    <string name="success">Success</string>
+
+    <string name="email_error">Please enter a valid E-Mail</string>
+    <string name="password_empty_error">Please enter your Password</string>
+    <string name="passwords_does_not_match">Passwords does not match!</string>
+    <string name="name_error">Please enter your Full Name</string>
+    <string name="last_name_error">Please enter your Last Name</string>
+    <string name="mobile_error">Please enter your Mobile Number</string>
+    <string name="otp_empty_error">Please enter your OTP</string>
+    <string name="otp_length_error">Please enter a valid OTP.</string>
+    <string name="hey_welcome_to_lush">Hey %1$s , Welcome to Lush !</string>
+    <string name="subcategories_to_choose_from">%1$s subcategories to choose from</string>
+    <string name="view_more_address">View %1$s more</string>
+    <string name="no_reviews">%1$s reviews</string>
+    <string name="total_ratings">%1$s total ratings</string>
+    <string name="no_of_products_to_choose_from">%1$s products to choose from</string>
+    <string name="total_in_kd">Total - KD %1$s</string>
+    <string name="error_name_field_empty">Please enter the name</string>
+    <string name="error_street_field_empty">Please enter the street name</string>
+    <string name="error_postal_code_field_empty">Please enter the postal code</string>
+    <string name="error_postal_code_in_valid">Postcode must be between 2 and 10 characters!</string>
+    <string name="error_city_field_empty">Please enter the city</string>
+    <string name="error_governorates_field_empty">Please select a Governorate</string>
+    <string name="error_country_field_empty">Please select a Country</string>
+    <string name="error_email_field_empty">Please enter the email</string>
+    <string name="error_address_field_empty">Please enter the address</string>
+    <string name="error_address_field_invalid">Address 1 must be between 3 and 128 characters!</string>
+    <string name="error_house_field_empty">Please enter House No/Building No/Apartment</string>
+    <string name="error_area_field_empty">Please enter Area</string>
+    <string name="error_house_field_invalid">House No/Building No/Apartment No must be between 2 and 128 characters!</string>
+    <string name="error_avenue_field_empty">Please enter Avenue No</string>
+    <string name="error_floor_field_empty">Please enter Floor No</string>
+    <string name="error_flat_field_empty">Please enter Flat No</string>
+    <string name="error_block_no_field_empty">Please enter Block No</string>
+    <string name="error_block_no_field_invalid">Block No must be between 2 and 128 characters!</string>
+    <string name="error_first_name_field_empty">Please enter your first name</string>
+    <string name="error_last_name_field_empty">Please enter your last name</string>
+    <string name="error_telephone_field_empty">Please enter your mobile number</string>
+    <string name="error_enquiry_field_empty">Please enter your enquiry details</string>
+    <string name="error_input_is_same">Please enter your updated information</string>
+    <string name="has_been_added_to_your_cart">%s has been added to your cart</string>
+    <string name="facebook_app_id">196616195065026</string>
+    <string name="fb_login_protocol_scheme">fb196616195065026</string>
+    <string name="city">City</string>
+    <string name="area">Area*</string>
+    <string name="block_no">Block No*</string>
+    <string name="street">Street*</string>
+    <string name="house_no">House No/Building No/Apartment No</string>
+    <string name="avenue_no">Avenue No</string>
+    <string name="floor_no">Floor No</string>
+    <string name="flat_no">Flat No</string>
+    <string name="retry">Retry</string>
+    <string name="add_new_delivery_address">Add new delivery address</string>
+    <string name="add_new_payment_address">Add new payment address</string>
+    <string name="select_preferred_shipment_method">Please select the preferred shipping method to use on this order.</string>
+    <string name="select_preferred_payment_method">Please select the preferred payment method to use on this order.</string>
+    <string name="payment_method">Payment Options</string>
+    <string name="please_select_address">Please select a address</string>
+    <string name="please_enter_a_coupon_code">Please enter a coupon code!</string>
+    <string name="please_select_a_rating">Please select a review rating!</string>
+    <string name="please_enter_ur_name">Please enter your name</string>
+    <string name="please_enter_ur_description">Please enter your description.</string>
+    <string name="please_select_delivery_method">Please select a delivery option</string>
+    <string name="please_select_payment_method">Please select a payment option</string>
+    <string name="add_comments_about_your_order">Add Comments About Your Order</string>
+    <string name="select_country">Select the country</string>
+    <string name="select_governorate">Select the Governorate</string>
+    <string name="select_area">Select the Area</string>
+    <string name="select_item">Select the %s</string>
+    <string name="quantity">Quantity</string>
+    <string name="order_history">Order History</string>
+    <string name="your_order_has_been_placed">Your order has been placed!</string>
+    <string name="order_has_been_placed_body">Please direct any questions you have to the   customercare@lushkw.com. \n
+Thanks for shopping with us online!</string>
+    <string name="rate">RATE</string>
+    <string name="post_a_review">POST A REVIEW</string>
+    <string name="review_name">Your Name</string>
+    <string name="review_description">Review Description</string>
+    <string name="you_are_rating_this_product">You are rating this product %s out of 5</string>
+    <string name="registration_successful">Registration successful</string>
+    <string name="this_product_has_a_minmium_value">This product has a minimum quantity of  %d</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="available_options">Available Options</string>
+    <string name="my_delivery_and_billing_addresses_are_the_same">My delivery and billing addresses are the same.</string>
+    <string name="billing_details">Billing Details</string>
+    <string name="delivery_details">Delivery Details</string>
+    <string name="user_not_logged_in">User not logged in</string>
+    <string name="guest">Guest</string>
+    <string name="unable_to_process_your_order">Unable to process your order!</string>
+    <string name="payment">Payment</string>
+    <string name="view_cart">View Cart</string>
+    <string name="out_of_5">out of 5</string>
+    <string name="product_code">Product Code:</string>
+    <string name="forgot_password_email_sent_message">An email with a confirmation link has been sent your email address.</string>
+    <string name="submitted">Submitted</string>
+    <string name="product_added_to_wishlist">Product added to WishList</string>
+    <string name="discount_applied">Discount Applied</string>
+    <string name="home">Home</string>
+    <string name="notification_error_ssl_cert_invalid">SSL error occurred. Would you like to proceed?</string>
+    <string name="add_new_address">Add a new address</string>
+    <string name="no_address_found">No address found</string>
+    <string name="categories">Categories</string>
+    <string name="lush_store">Lush Store</string>
+    <string name="my_orders">My Orders</string>
+    <string name="gift_cards">Gift Cards</string>
+    <string name="view_all">View All</string>
+    <string name="bath_oils">BATH OILS</string>
+    <string name="make_up">MAKE-UP</string>
+    <string name="massage_bars">MASSAGE BARS</string>
+    <string name="hair_treatment">HAIR TREATMENT</string>
+    <string name="body_spray">BODY SPRAY</string>
+    <string name="my_cart">My Cart</string>
+    <string name="search">Search</string>
+    <string name="name">Name</string>
+    <string name="email">E-Mail</string>
+    <string name="email_mandatory">E-Mail*</string>
+    <string name="our_location">Our Location</string>
+    <string name="location_name">Lush Kuwait</string>
+    <string name="location_address">Hawally, Tunis St. \nAlwaffah Tower Building 5, \n11th Floor, \nOffice No:19-20 Kuwait</string>
+    <string name="location_email"><u>customercare@lushkw.com</u></string>
+    <string name="telephone_title">Telephone:</string>
+    <string name="telephone_value"><u>22286224</u></string>
+    <string name="opening_times">Opening Times:</string>
+    <string name="openingTimesValues">Sunday - Thursday: 09:00 AM - 04:00 PM \nFriday &#38; Saturday: 2:00 PM - 4:00 PM</string>
+    <string name="shopping_cart_empty_message">Your shopping cart is empty!</string>
+    <string name="file_areas">areas.json</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="english">English</string>
+    <string name="arabic">Arabic</string>
+    <string name="minimum_purchase_will_be_10_kd_or_more">Minimum purchase will be 10 KD or more</string>
+    <string name="promocode">Enter your promo code</string>
+    <string name="your_coupon_discount_has_been_applied">"Your discount coupon has been applied! "</string>
+
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_graph"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_addressListFragment"
+            app:destination="@id/addressListFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editAddressFragment"
+            app:destination="@id/editAddressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addressListFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.profile.AddressListFragment"
+        android:label="AddressListFragment"
+        tools:layout="@layout/address_list_fragment">
+        <argument
+            android:name="addressList"
+            app:argType="com.cosmetics.domain.model.home.profile.AddressList"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_addressListFragment_to_editAddressFragment"
+            app:destination="@id/editAddressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editAddressFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.edit_address.AddressInputFragment"
+        android:label="EditAddressFragment"
+        tools:layout="@layout/fragment_edit_address">
+        <argument
+            android:name="address"
+            app:argType="com.cosmetics.domain.model.home.profile.Address"
+            app:nullable="true" />
+        <argument
+            android:name="type"
+            app:argType="integer" />
+    </fragment>
+</navigation>

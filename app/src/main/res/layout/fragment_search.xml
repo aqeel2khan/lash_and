@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.cosmetics.lush.ui.products.search.SearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.products.search.SearchFragment">
+
+        <ImageView
+            android:id="@+id/backIV"
+            android:layout_width="50dp"
+            android:layout_height="56dp"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+        <EditText
+            android:id="@+id/searchET"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/grey_200"
+            android:fontFamily="@font/helvetica_neue"
+            android:hint="@string/search"
+            android:inputType="textCapWords"
+            android:onTextChanged="@{viewModel.onTextChanged}"
+            android:paddingStart="35dp"
+            android:paddingEnd="35dp"
+            android:text="@={viewModel.searchString}"
+            setSearchText="@{viewModel.searchString}"
+            android:textColor="@color/greyTextNormal"
+            android:textColorHint="@color/grey_500"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/backIV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/backIV"
+            app:layout_constraintTop_toTopOf="@+id/backIV" />
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="10dp"
+            android:visibility="@{viewModel.isSearchProgressVisible? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/searchET"
+            app:layout_constraintStart_toStartOf="@+id/searchET"
+            app:layout_constraintTop_toTopOf="@+id/searchET"
+            app:srcCompat="@drawable/ic_search" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:onClick="@{()->viewModel.clearText()}"
+            android:padding="3dp"
+            app:layout_constraintBottom_toBottomOf="@+id/searchET"
+            app:layout_constraintEnd_toEndOf="@+id/searchET"
+            app:layout_constraintTop_toTopOf="@+id/searchET"
+            app:srcCompat="@drawable/ic_close_grey" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:visibility="@{viewModel.isSearchProgressVisible? View.VISIBLE: View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/searchET"
+            app:layout_constraintStart_toStartOf="@+id/searchET"
+            app:layout_constraintTop_toTopOf="@+id/searchET" />
+
+        <LinearLayout
+            android:id="@+id/containerDropDownRecentSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_25"
+            android:onClick="@{()->viewModel.expandRecentSearch()}"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchET">
+
+            <TextView
+                android:id="@+id/recentSearchesTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/recent_searches"
+                android:textColor="@color/grey_500"
+                android:textSize="@dimen/font_12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchET" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_25"
+                android:src="@{viewModel.isRecentSearchListVisible()? @drawable/ic_down_arrow_grey : @drawable/ic_arrow_up}" />
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recentSearchesRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:clipToPadding="false"
+            android:paddingTop="10dp"
+            android:visibility="@{viewModel.isRecentSearchListVisible()? View.VISIBLE: View.GONE}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/containerDropDownRecentSearch"
+            tools:itemCount="4"
+            tools:listitem="@layout/recent_search_item" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productsRV"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:clipToPadding="false"
+            android:paddingTop="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recentSearchesRV"
+            tools:listitem="@layout/product_list_item" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

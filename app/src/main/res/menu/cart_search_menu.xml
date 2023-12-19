@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/actionCart"
+        android:icon="@drawable/ic_cart_with_count"
+        android:orderInCategory="98"
+        android:title="@string/my_cart"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/actionSearch"
+        android:icon="@drawable/ic_search"
+        android:orderInCategory="99"
+        android:title="@string/search"
+        app:showAsAction="always" />
+
+</menu>

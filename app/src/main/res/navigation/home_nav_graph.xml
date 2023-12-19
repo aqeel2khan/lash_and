@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_graph"
+    app:startDestination="@id/tab_home">
+
+    <fragment
+        android:id="@+id/tab_home"
+        android:name="com.cosmetics.lush.ui.homemodule.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home_container">
+        <action
+            android:id="@+id/action_homeFragment_to_contactUsFragment"
+            app:destination="@id/contactUsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_wishListFragment"
+            app:destination="@id/wishListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_subCategoryFragment"
+            app:destination="@id/subCategoryFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_tab_home_to_productListFragment"
+            app:destination="@id/productListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/wishListFragment"
+        android:name="com.cosmetics.lush.ui.products.wishlist.WishListFragment">
+        <action
+            android:id="@+id/action_wishListFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.contactus.ContactUsFragment" />
+    <fragment
+        android:id="@+id/subCategoryFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.sub_category.SubCategoryFragment"
+        android:label="activity_sub_category"
+        tools:layout="@layout/activity_sub_category">
+        <argument
+            android:name="categoryItem"
+            app:argType="com.cosmetics.domain.model.home.request.Category" />
+
+        <action
+            android:id="@+id/action_subcategory_to_productListFragment"
+            app:destination="@id/productListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/tab_category"
+        android:name="com.cosmetics.lush.ui.homemodule.categories.CategoriesFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories">
+
+        <action
+            android:id="@+id/action_homeFragment_to_subCategoryFragment"
+            app:destination="@id/subCategoryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/tab_lush_store"
+        android:name="com.cosmetics.lush.ui.homemodule.lush_store.LushStoreFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories" />
+    <fragment
+        android:id="@+id/tab_my_orders"
+        android:name="com.cosmetics.lush.ui.homemodule.orders.MyOrderFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories">
+        <action
+            android:id="@+id/action_tab_my_orders_to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_tab_my_orders_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <!--
+        <fragment
+            android:id="@+id/tab_my_orders"
+            android:name="com.cosmetics.lush.ui.homemodule.myorders.MyOrdersFragment"
+            android:label="fragment_categories"
+            tools:layout="@layout/fragment_categories" />
+    -->
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_addressListFragment"
+            app:destination="@id/addressListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_profileFragment_to_editAddressFragment"
+            app:destination="@id/editAddressFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/addressListFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.profile.AddressListFragment"
+        android:label="AddressListFragment"
+        tools:layout="@layout/address_list_fragment">
+        <argument
+            android:name="addressList"
+            app:argType="com.cosmetics.domain.model.home.profile.AddressList"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:nullable="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_addressListFragment_to_editAddressFragment"
+            app:destination="@id/editAddressFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/editAddressFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.edit_address.AddressInputFragment"
+        android:label="EditAddressFragment"
+        tools:layout="@layout/fragment_edit_address">
+        <argument
+            android:name="address"
+            app:argType="com.cosmetics.domain.model.home.profile.Address"
+            app:nullable="true" />
+        <argument
+            android:name="type"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.cosmetics.lush.ui.products.ProductsListFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_products_list">
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            tools:layout="@layout/fragment_product_details" />
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+        <argument
+            android:name="categoryId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.cosmetics.lush.ui.products.product_details.ProductDetailsFragment"
+        android:label="ProductDetailsFragment">
+        <action
+            android:id="@+id/action_productDetailsFragment_to_productListFragment"
+            app:destination="@id/productListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="product"
+            app:argType="com.cosmetics.domain.model.product.Product"
+            app:nullable="true" />
+        <argument
+            android:name="productsInSameCategory"
+            app:argType="com.cosmetics.lush.ui.products.SimilarProductCategoryList"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:nullable="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            tools:layout="@layout/fragment_product_details" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_productReviewFragment"
+            app:destination="@id/productReviewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_relatedProductsFragment"
+            app:destination="@id/relatedProductsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="productId"
+            app:argType="integer" />
+        <argument
+            android:name="categoryId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_giveReviewFragment"
+            app:destination="@id/giveReviewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_productOptionDialogFragment"
+            app:destination="@id/productOptionDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.cosmetics.lush.ui.products.search.SearchFragment"
+        android:label="SearchFragment">
+        <action
+            android:id="@+id/action_searchFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/productReviewFragment"
+        android:name="com.cosmetics.lush.ui.products.review.ProductReviewFragment"
+        android:label="product_review_fragment"
+        tools:layout="@layout/product_review_fragment">
+        <argument
+            android:name="review"
+            app:argType="com.cosmetics.domain.model.product.Reviews" />
+        <action
+            android:id="@+id/action_productReviewFragment_to_giveReviewFragment"
+            app:destination="@id/giveReviewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/relatedProductsFragment"
+        android:name="com.cosmetics.lush.ui.products.relatedproduct.RelatedProductsFragment"
+        android:label="RelatedProductsFragment">
+        <argument
+            android:name="productList"
+            app:argType="com.cosmetics.domain.model.product.ProductListResponse" />
+        <action
+            android:id="@+id/action_relatedProductsFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.orders.details.OrderDetailsFragment"
+        android:label="OrderDetailsFragment"
+        tools:layout="@layout/fragment_order_details">
+        <argument
+            android:name="order"
+            app:argType="com.cosmetics.domain.model.order.Order" />
+        <action
+            android:id="@+id/action_orderDetailsFragment_to_contactUsFragment"
+            app:destination="@id/contactUsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.cosmetics.lush.ui.settings.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/giveReviewFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.give_review.GiveReviewFragment"
+        android:label="GiveReviewFragment">
+        <argument
+            android:name="productId"
+            app:argType="integer" />
+    </fragment>
+    <dialog
+        android:id="@+id/productOptionDialogFragment"
+        android:name="com.cosmetics.lush.ui.products.product_details.productoption.ProductOptionDialogFragment"
+        android:label="ProductOptionDialogFragment">
+        <argument
+            android:name="product"
+            app:argType="com.cosmetics.domain.model.product.Product" />
+        <argument
+            android:name="quantity"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productOptionDialogFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/appInformationDetailsFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.appinfo.AppInformationDetailsFragment"
+        android:label="AppInformationDetailsFragment">
+        <argument
+            android:name="appInformation"
+            app:argType="com.cosmetics.domain.model.home.appinfo.AppInformation" />
+    </fragment>
+</navigation>

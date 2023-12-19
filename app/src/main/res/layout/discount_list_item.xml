@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="discount"
+            type="com.cosmetics.domain.model.product.Discount" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="@dimen/dimen_5"
+        android:paddingBottom="@dimen/dimen_5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:text="@{@string/discount_description(discount.quantity,discount.priceExcludingTaxFormated)}"
+            android:textColor="@color/greyTextNormal"
+            android:textSize="@dimen/font_15"
+            app:layout_constraintStart_toStartOf="@+id/productNameTV"
+            app:layout_constraintTop_toBottomOf="@+id/productNameTV" />
+
+    </FrameLayout>
+</layout>

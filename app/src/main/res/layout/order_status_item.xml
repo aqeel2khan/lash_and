@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/orderStatusIV"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="20dp"
+        android:elevation="1dp"
+        android:src="@drawable/oval_black_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderPathViewTop"
+        app:layout_goneMarginTop="10dp" />
+
+    <TextView
+        android:id="@+id/orderStatusTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/helvetica_neue"
+        android:includeFontPadding="false"
+        android:text="- Order Placed"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dimen_16"
+        app:layout_constraintStart_toEndOf="@+id/orderStatusIV"
+        app:layout_constraintBottom_toBottomOf="@+id/orderStatusIV"
+        app:layout_constraintTop_toTopOf="@+id/orderStatusIV" />
+
+    <TextView
+        android:id="@+id/orderStatusDateTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5"
+        android:fontFamily="@font/helvetica_neue"
+        android:includeFontPadding="false"
+        android:textColor="@color/black"
+        android:paddingStart="@dimen/dimen_10"
+        android:textSize="@dimen/font_14"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintStart_toStartOf="@+id/orderStatusTV"
+        app:layout_constraintTop_toBottomOf="@+id/orderStatusTV" />
+
+    <View
+        android:id="@+id/orderPathViewTop"
+        android:layout_width="4dp"
+        android:layout_height="35dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/orderStatusIV"
+        app:layout_constraintStart_toStartOf="@+id/orderStatusIV"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/orderPathViewBottom"
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:background="@color/green"
+        app:layout_constraintBottom_toBottomOf="@+id/orderStatusDateTV"
+        app:layout_constraintEnd_toEndOf="@+id/orderStatusIV"
+        app:layout_constraintStart_toStartOf="@+id/orderStatusIV"
+        app:layout_constraintTop_toTopOf="@+id/orderStatusIV" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

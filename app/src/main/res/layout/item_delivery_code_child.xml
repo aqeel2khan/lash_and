@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cosmetics.lush.ui.homemodule.cart.delivery.DeliveryMethodViewModel" />
+
+        <variable
+            name="quote"
+            type="com.cosmetics.domain.model.home.delivermethods.Quote" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/imageViewEdit"
+            style="@style/TextLabelMediumDarkTittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@{quote.isSelected}"
+            android:onClick="@{()->viewModel.onItemClick(quote)}"
+            android:text="@{quote.getHeaderTitle()}"
+            android:textSize="@dimen/font_16" />
+
+    </LinearLayout>
+</layout>

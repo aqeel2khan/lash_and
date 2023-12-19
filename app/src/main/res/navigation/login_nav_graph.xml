@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav_graph"
+    app:startDestination="@id/loginFragment"
+    tools:ignore="UnusedNavigation">
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.cosmetics.lush.ui.login.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_recoverPasswordFragment"
+            app:destination="@id/recoverPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_successFragment"
+            app:destination="@id/successFragment"
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.cosmetics.lush.ui.login.register.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_otpVerificationFragment"
+            app:destination="@id/otpVerificationFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/otpVerificationFragment"
+        android:name="com.cosmetics.lush.ui.login.otp_verify.OtpVerificationBindingFragment"
+        android:label="OtpVerificationFragment"
+        tools:layout="@layout/fragment_otp_verification">
+        <action
+            android:id="@+id/action_otpVerificationFragment_to_successFragment"
+            app:destination="@id/successFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recoverPasswordFragment"
+        android:name="com.cosmetics.lush.ui.login.recover_password.ForgottenPasswordFragment"
+        android:label="RecoverPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password" />
+
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.cosmetics.lush.ui.login.success.SuccessFragment"
+        android:label="SuccessFragment"
+        tools:layout="@layout/fragment_success">
+        <action
+            android:id="@+id/action_successFragment_to_home_graph"
+            app:destination="@id/home_graph"
+            app:popUpTo="@id/successFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <include app:graph="@navigation/home_nav_graph" />
+</navigation>

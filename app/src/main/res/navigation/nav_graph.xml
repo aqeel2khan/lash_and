@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.cosmetics.lush.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_splashFragment_to_nav_graph"
+            app:destination="@id/login_nav_graph"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_languageSelectionFragment"
+            app:destination="@id/languageSelectionFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/languageSelectionFragment"
+        android:name="com.cosmetics.lush.ui.settings.LanguageSelectionFragment"
+        android:label="LanguageSelectionFragment"
+        tools:layout="@layout/fragment_language_selection" />
+
+
+</navigation>

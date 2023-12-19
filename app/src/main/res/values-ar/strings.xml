@@ -1,0 +1,284 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string-array name="governorate">
+        <item>Select a Governorate</item>
+        <item>Al Asimah Governorate</item>
+        <item>Hawalli Governorate</item>
+        <item>Farwaniya Governorate</item>
+        <item>Mubarak Al-Kabeer Governorate</item>
+        <item>Ahmadi Governorate</item>
+        <item>Jahra Governorate</item>
+    </string-array>
+
+    <string-array name="product_sort_by">
+        <item>الافتراضي</item>
+        <item>من ( أ - ي )</item>
+        <item>من ( ي - أ )</item>
+        <item>السعر من ( الاقل - الاعلى )</item>
+        <item>السعر من (الاعلى - الاقل )</item>
+        <item>التقيم ( الاعلى )</item>
+        <item>التقيم ( الاقل )</item>
+        <item>النوع ( أ - ي )</item>
+        <item>النوع ( ي - أ )</item>
+    </string-array>
+    <string name="app_name">لش</string>
+    <string name="thank_you_for_your_review">Thank you for your review. It has been submitted to the webmaster for approval.</string>
+    <string name="no_record_found">No record found</string>
+    <string name="wishlist">المفضله</string>
+    <string name="settings">"الاعدادات "</string>
+    <string name="shop_now">تسوق الأن</string>
+    <string name="find_lush_stores">تجد محلاتنا</string>
+    <string name="app">تطبيق</string>
+    <string name="about_us">"لمحة عنا "</string>
+    <string name="about_us_description">about_us_ar.html</string>
+    <string name="return_refund_us">سياسه إلغاء واسترجاع المنتجات</string>
+    <string name="return_refund_us_description">return_refund_ar.html</string>
+    <string name="terms_conditions">شروط الاستخدام</string>
+    <string name="terms_conditions_description">terms_condition_ar.html</string>
+    <string name="privacy_policy">الخصوصية</string>
+    <string name="privacy_policy_description">privacy_policy_ar.html</string>
+    <string name="policies">الخصوصية</string>
+    <string name="contact_us">اتصل بنا</string>
+    <string name="related_product">متنجات مشابهة</string>
+    <string name="give_a_review">Give a review</string>
+    <string name="help_support">الدعم و المساعده</string>
+    <string name="cool_off">Cool off</string>
+    <string name="banner_sub_title">with this summury collection</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="contact_us_help">Write us a note and we’ll get back to you as quickly as possible.</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="zone_id">Zone id</string>
+    <string name="whats_on_your_mind">الموضوع</string>
+    <string name="submit">أرسل</string>
+    <string name="push_notifications">Push Notifications</string>
+    <string name="profile_anonymous">Make your profile anonymous to others</string>
+    <string name="switch_to_arabic_version_of_the_app">تحويل الى النسخة العربية للتطبيق</string>
+    <string name="logout_of_lushkw_app">الخروج من لش</string>
+    <string name="product_name_1">Turtle Immersion</string>
+    <string name="product_sub_1">Turtle-y awesome bathing</string>
+    <string name="sort_by">فرز</string>
+    <string name="filter">Filter</string>
+    <string name="type">نوع</string>
+    <string name="others">اخرى</string>
+    <string name="availability">التوفر</string>
+    <string name="availability_with_semicolon">Availability:</string>
+    <string name="user_profile">الملف الشخصي للمستخدم</string>
+    <string name="my_addresses">My Addresses</string>
+    <string name="save">حفظ</string>
+    <string name="checkout_now">الحساب الآن</string>
+    <string name="apply">تطبيق</string>
+    <string name="remove">ازالة</string>
+    <string name="eg_apr1234">EG APR1234</string>
+    <string name="have_a_promocode">لديك كود خصم ؟</string>
+    <string name="checkout">الحساب</string>
+    <string name="cash_on_delivery">الدفع عند الاستلام</string>
+    <string name="proceed">تقدم</string>
+    <string name="shipping_cost">Shipping Cost</string>
+    <string name="item_price">Item Price</string>
+    <string name="discount_description">%s or more at %s</string>
+    <string name="discounts">Discounts</string>
+    <string name="total_cost">القيمة الاجمالية</string>
+    <string name="total_cost_order_history">Total Cost : </string>
+    <string name="total">Total</string>
+    <string name="total_in_cart">Total - %s</string>
+    <string name="total_to_pay" formatted="false">%1$s %2$s .اجمالي المبلغ</string>
+    <string name="total_in_order_details">%1s %2s</string>
+    <string name="timestamp_order_history">%1s at %2s</string>
+    <string name="cost_breakdown">%s  items - Cost Breakdown</string>
+    <string name="payment_options">Payment Options</string>
+    <string name="payment_address">Payment Address</string>
+    <string name="select_payment_address">اختار عنوان الدفع</string>
+    <string name="delivery_address">خيارات الاستلام</string>
+    <string name="select_delivery_address">اختار عنوان التوصيل</string>
+    <string name="select_address">اختار العنوان</string>
+    <string name="delivery_methods">Delivery Options</string>
+    <string name="change_address">Change address</string>
+    <string name="done">تم</string>
+    <string name="credit_debit_card">Credit Card / Debit Card</string>
+    <string name="knet">KNET</string>
+    <string name="recent_searches">بحثة عنها مؤخرا</string>
+    <string name="current_orders">الطلبات الحالية</string>
+    <string name="previous_orders">الطلبات السابقة</string>
+    <string name="order_id">رقم الطلب</string>
+    <string name="placed_on">وقت الطلب</string>
+    <string name="track_order">متابعة الطلب</string>
+    <string name="expected_delivery_on">Expected delivery on</string>
+    <string name="delivered">تم التوصيل</string>
+    <string name="delivered_on">موعد التوصيل</string>
+    <string name="order_status">حالة الطلب</string>
+    <string name="expected_time_of_delivery">الوقت المتوقع للتوصيل</string>
+    <string name="product_details">تفاصيل المنتج</string>
+    <string name="product_features">صفات</string>
+    <string name="fresh_ingredient">المكونات</string>
+    <string name="how_to_use">طريقة الاستخدام</string>
+    <string name="product_ratings_and_reviews">وتقيمات وتعليقات المنتج</string>
+    <string name="see_all">See All</string>
+    <string name="more_in_this_category">المزيد في هذا التصنيف</string>
+    <string name="related_products">متنجات مشابهة</string>
+    <string name="give_review">Give a Review</string>
+    <string name="write_a_review">اكتب تقيمك</string>
+    <string name="submit_review">عرض التقيم</string>
+    <string name="edit_address">Edit Address</string>
+    <string name="address_line_1">Address Line 1</string>
+    <string name="address_line_2">Address Line 2</string>
+    <string name="locality_landmark"><![CDATA[Locality & Landmark]]></string>
+    <string name="pincode">Post Code</string>
+    <string name="deliver_to">Deliver to</string>
+    <string name="my_address">العنوان</string>
+    <string name="title_continue">تابع</string>
+
+    <string name="login">تسجيل دخول</string>
+    <string name="continue_as_guest">اكمل كزائر</string>
+    <string name="skip">تخطي</string>
+    <string name="password">كلمة المرور</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="forgotten_password">Forgotten Password</string>
+    <string name="register">تسجيل</string>
+    <string name="register_now">سجل الآن</string>
+    <string name="facebook_login">Facebook Login</string>
+    <string name="google_login">Google Login</string>
+    <string name="full_name">Full Name</string>
+    <string name="first_name">الاسم الاول </string>
+    <string name="mobile_no">هاتف</string>
+    <string name="mobile_no_mandatory">هاتف*</string>
+    <string name="otp_verification">OTP تعريف</string>
+    <string name="otp_help">We have sent a 6 digit OTP to the registered number ******890. Please enter it below.
+    </string>
+    <string name="six_digit_otp">6 digit OTP</string>
+    <string name="verify_otp">تعريف OTP</string>
+    <string name="resend_otp">اعادة ارسال OTP</string>
+    <string name="or">او</string>
+    <string name="recover_help">
+        Enter the e-mail address associated with your account. Click submit to have a password reset link e-mailed to you.
+    </string>
+    <string name="recover">استعادة</string>
+    <string name="cancel">إلغاء</string>
+    <string name="success">بنجاح</string>
+    <string name="email">البريد الالكتروني</string>
+    <string name="email_mandatory">البريد الالكتروني*</string>
+    <string name="email_error">يرجى ادخال بريد الكتروني مفعل</string>
+    <string name="password_empty_error">Please enter your Password</string>
+    <string name="passwords_does_not_match">Passwords does not match!</string>
+    <string name="name_error">Please enter your Full Name</string>
+    <string name="last_name_error">ادخل الاسم الاخير</string>
+    <string name="mobile_error">Please enter your Mobile Number</string>
+    <string name="otp_empty_error">Please enter your OTP</string>
+    <string name="otp_length_error">Please enter a valid OTP.</string>
+    <string name="hey_welcome_to_lush">مهلاً %1$s , اهلا بك في لش</string>
+    <string name="subcategories_to_choose_from">%1$s فئة فرعية للاختيار</string>
+    <string name="view_more_address">View %1$s more</string>
+    <string name="no_reviews">%1$s تقيمات</string>
+    <string name="total_ratings">%1$s مجموع التقيمات</string>
+    <string name="no_of_products_to_choose_from"> منتجات لتختار منها %1$s</string>
+    <string name="total_in_kd">المجموع بالدينار الكويتي %1$s</string>
+    <string name="error_name_field_empty">يرجى ادخال الاسم</string>
+    <string name="error_postal_code_field_empty">Please enter the postal code</string>
+    <string name="error_postal_code_in_valid">Postcode must be between 2 and 10 characters!</string>
+    <string name="error_city_field_empty">Please enter the city</string>
+    <string name="error_governorates_field_empty">Please select a Governorate</string>
+    <string name="error_country_field_empty">Please select a Country</string>
+    <string name="error_email_field_empty">ادخل البريد الالكتروني</string>
+    <string name="error_address_field_empty">Please enter the address</string>
+    <string name="error_address_field_invalid">Address 1 must be between 3 and 128 characters!</string>
+    <string name="error_first_name_field_empty">ادخل الاسم الأول</string>
+    <string name="error_last_name_field_empty">ادخل الاسم الاخير</string>
+    <string name="error_telephone_field_empty">ادخل رقم الهاتف</string>
+    <string name="error_enquiry_field_empty">Please enter your enquiry details</string>
+    <string name="error_input_is_same">Please enter your updated information</string>
+    <string name="has_been_added_to_your_cart">%s has been added to your cart</string>
+    <string name="facebook_app_id">196616195065026</string>
+    <string name="fb_login_protocol_scheme">fb196616195065026</string>
+    <string name="city">City</string>
+    <string name="retry">Retry</string>
+    <string name="add_new_delivery_address">اضف عنوان توصيل جديد</string>
+    <string name="add_new_payment_address">اضف عنوان دفع جديد</string>
+    <string name="select_preferred_shipment_method">Please select the preferred shipping method to use on this order.</string>
+    <string name="select_preferred_payment_method">Please select the preferred payment method to use on this order.</string>
+    <string name="payment_method">Payment Options</string>
+    <string name="please_select_address">Please select a address</string>
+    <string name="please_enter_a_coupon_code">Please enter a coupon code!</string>
+    <string name="please_select_a_rating">Please select a review rating!</string>
+    <string name="please_enter_ur_name">Please enter your name</string>
+    <string name="please_enter_ur_description">Please enter your description.</string>
+    <string name="please_select_delivery_method">Please select a delivery option</string>
+    <string name="please_select_payment_method">Please select a payment option</string>
+    <string name="add_comments_about_your_order">اضف تعليق عن طلبك</string>
+    <string name="last_name">الاسم الاخير</string>
+    <string name="select_country">Select the country</string>
+    <string name="select_governorate">Select the Governorate</string>
+    <string name="select_item">Select the %s</string>
+    <string name="quantity">العدد</string>
+    <string name="order_history">Order History</string>
+    <string name="your_order_has_been_placed">تم تنفيذ طلبك</string>
+    <string name="order_has_been_placed_body">يرجى توجيه أي أسئلة لديك إلى customercare@lushkw.com.  شكرا للتسوق معنا عبر الإنترنت!</string>
+    <string name="rate">RATE</string>
+    <string name="post_a_review">عرض التعليق</string>
+    <string name="review_name">Your Name</string>
+    <string name="review_description">عرض التفاصيل</string>
+    <string name="you_are_rating_this_product">You are rating this product %s out of 5</string>
+    <string name="registration_successful">تم التسجيل بنجاح</string>
+    <string name="this_product_has_a_minmium_value">This product has a minimum quantity of  %d</string>
+    <string name="add_to_cart">اضف الى السلة</string>
+    <string name="available_options">Available Options</string>
+    <string name="my_delivery_and_billing_addresses_are_the_same">اضف تعليق عن طلبك</string>
+    <string name="billing_details">تفاصيل الفاتورة</string>
+    <string name="delivery_details">تفاصيل الاستلام</string>
+    <string name="user_not_logged_in">User not logged in</string>
+    <string name="guest">زائر</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="unable_to_process_your_order">Unable to process your order!</string>
+    <string name="payment">Payment</string>
+    <string name="view_cart">View Cart</string>
+    <string name="out_of_5">out of 5</string>
+    <string name="product_code">Product Code:</string>
+    <string name="forgot_password_email_sent_message">An email with a confirmation link has been sent your email address.</string>
+    <string name="submitted">Submitted</string>
+    <string name="product_added_to_wishlist">Product added to WishList</string>
+    <string name="discount_applied">Discount Applied</string>
+
+
+    <string name="add_new_address">اضف عنوان جديد</string>
+    <string name="no_address_found">No address found</string>
+    <string name="categories">التصنيفات</string>
+    <string name="lush_store">محل لش</string>
+    <string name="my_orders">طلبي</string>
+    <string name="gift_cards">Gift Cards</string>
+    <string name="view_all">عرض الكل</string>
+    <string name="bath_oils">BATH OILS</string>
+    <string name="make_up">MAKE-UP</string>
+    <string name="massage_bars">MASSAGE BARS</string>
+    <string name="hair_treatment">HAIR TREATMENT</string>
+    <string name="body_spray">BODY SPRAY</string>
+    <string name="my_cart">My Cart</string>
+    <string name="search">بحث</string>
+    <string name="name">الاسم</string>
+
+    <string name="first_name_mandatory">الاسم الاول</string>
+    <string name="last_name_mandatory">الاسم الاخير</string>
+    <string name="area">المنطقة</string>
+    <string name="block_no">القطعة</string>
+    <string name="street">الشارع</string>
+    <string name="house_no">رقم المنزل / المبنى / الشقة</string>
+    <string name="avenue_no">الجادة</string>
+    <string name="floor_no">الدور</string>
+    <string name="flat_no">الشقة</string>
+    <string name="error_house_field_empty">"ادخل رقم المنزل / المبنى / الوحده "</string>
+    <string name="error_area_field_empty">ادخل المنطقه</string>
+    <string name="error_block_no_field_empty">"ادخل القطعه "</string>
+    <string name="error_flat_field_empty">ادخل رقم الشقه</string>
+    <string name="error_floor_field_empty">"ادخل الدور "</string>
+    <string name="error_avenue_field_empty">ادخل الجاده</string>
+    <string name="shopping_cart_empty_message">السلة فارغة</string>
+    <string name="our_location">موقعنا</string>
+    <string name="telephone_title">رقم الهاتف أو الجوال</string>
+    <string name="opening_times">أوقات العمل</string>
+    <string name="file_areas">areas_ar.json</string>
+    <string name="minimum_purchase_will_be_10_kd_or_more">الحد الادنى للشراء ١٠ دنانير او أكثر</string>
+    <string name="promocode">Enter your promo code</string>
+    <string name="your_coupon_discount_has_been_applied">"Your discount coupon has been applied! "</string>
+    <string name="newsletter">القائمة البريدية</string>
+    <string name="careers_at_lush">مهنة في Lush</string>
+
+</resources>

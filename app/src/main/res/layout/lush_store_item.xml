@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="store"
+            type="com.cosmetics.domain.model.home.store.Store" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp">
+
+            <ImageView
+                android:id="@+id/storeIV"
+                setImage="@{store.image}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_180"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/mallNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:text="@{store.name}"
+                android:textColor="@color/greyTextNormal"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/storeIV" />
+
+            <TextView
+                android:id="@+id/mallLocationTV"
+                viewDataBasedVisibility="@{store.address}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_17"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="@dimen/dimen_3"
+                android:fontFamily="@font/helvetica_neue"
+                android:text="@{store.getAddressInText()}"
+                android:textSize="@dimen/font_12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mallNameTV"
+                tools:text="Lush Store Location" />
+
+            <TextView
+                android:id="@+id/mallOpeningTime"
+                viewDataBasedVisibility="@{store.getOpenTime}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_17"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:drawableStart="@drawable/ic_store_time"
+                android:drawablePadding="@dimen/dimen_3"
+                android:fontFamily="@font/helvetica_neue"
+                android:text="@{store.getOpenTime}"
+                android:textSize="@dimen/font_12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mallLocationTV"
+                tools:text="Lush Store Location" />
+
+            <TextView
+                android:id="@+id/mallTelephoneTV"
+                viewDataBasedVisibility="@{store.telephone}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_17"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:drawableStart="@drawable/ic_contact_phone_black"
+                android:drawablePadding="@dimen/dimen_3"
+                android:fontFamily="@font/helvetica_neue"
+                android:text="@{store.telephone}"
+                android:textSize="@dimen/font_12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mallOpeningTime"
+                tools:text="Lush Store Location" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

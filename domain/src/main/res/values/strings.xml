@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">domain</string>
+    <string name="select_item">Select the %s</string>
+    <string name="input_item">Input the %s</string>
+    <string name="please_select">Please Select</string>
+    <string name="please_select_language">PLEASE SELECT LANGUAGE</string>
+
+</resources>

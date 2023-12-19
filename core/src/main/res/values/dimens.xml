@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bottom_strip_margin">20dp</dimen>
+    <dimen name="back_iv_margin">25dp</dimen>
+    <dimen name="badge_count_textsize">10sp</dimen>
+    <dimen name="toggle_button_height">30dp</dimen>
+    <dimen name="bottom_stripe_height">60dp</dimen>
+    <dimen name="splash_icon_height">60dp</dimen>
+    <dimen name="splash_icon_side_margin">60dp</dimen>
+    <dimen name="grid_spacing">1dp</dimen>
+</resources>

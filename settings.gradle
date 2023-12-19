@@ -1,0 +1,5 @@
+rootProject.name='Lush'
+include ':app'
+include ':data'
+include ':core'
+include ':domain'

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.cosmetics.lush.ui.products.ProductListViewModel" />
+    </data>
+    <!--
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">-->
+    <!--            android:descendantFocusability="beforeDescendants"
+                android:focusable="true"
+                android:focusableInTouchMode="true"-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sortByTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/helvetica_neue"
+                android:text="@string/sort_by"
+                android:textColor="@color/grey_text_selector"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinnerSortBy"
+                setSpinnerAdapter="@{@stringArray/product_sort_by}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:paddingStart="@dimen/dimen_10"
+                android:paddingEnd="@dimen/dimen_10"
+                android:selectedItemPosition="@={viewModel.spinnerSelectedItemPosition}"
+                app:layout_constraintBottom_toBottomOf="@id/sortByTV"
+                app:layout_constraintStart_toEndOf="@+id/sortByTV"
+                app:layout_constraintTop_toTopOf="@id/sortByTV" />
+
+            <ImageView
+                android:id="@+id/imageViewSpinnerDropDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_drop_down_black"
+                app:layout_constraintBottom_toBottomOf="@id/spinnerSortBy"
+                app:layout_constraintStart_toEndOf="@+id/spinnerSortBy"
+                app:layout_constraintTop_toTopOf="@id/spinnerSortBy" />
+
+            <View
+                android:id="@+id/spinnerSortByBottomLine"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="@dimen/dimen_6"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:background="@color/greyTextHighOpacity"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewSpinnerDropDown"
+                app:layout_constraintStart_toStartOf="@+id/spinnerSortBy"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerSortBy" />
+            <ImageView
+                android:id="@+id/gridDisplayIV"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginEnd="15dp"
+                android:padding="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_display_grid" />
+
+            <ImageView
+                android:id="@+id/listDisplayIV"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginEnd="10dp"
+                android:padding="3dp"
+                app:layout_constraintEnd_toStartOf="@+id/gridDisplayIV"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_display_list" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/productsRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:paddingTop="@dimen/dimen_15"
+                android:paddingBottom="100dp"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerSortByBottomLine"
+                tools:itemCount="2"
+                tools:listitem="@layout/product_list_item" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--
+            <View
+                android:id="@+id/opacityBg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/whiteOpacityMed"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:visibility="gone" />
+
+                 <include
+                     layout="@layout/filter_layout"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/dimen_20"
+                     android:layout_marginTop="@dimen/dimen_80"
+                     android:layout_marginEnd="@dimen/dimen_20"
+                     android:layout_marginBottom="@dimen/dimen_80"
+                     android:visibility="invisible" />
+            <ImageView
+                android:id="@+id/filterIV"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="20dp"
+                android:background="@drawable/black_box_filled_bg"
+                android:elevation="8dp"
+                android:padding="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/filterBox"
+                app:layout_constraintEnd_toEndOf="@+id/filterBox"
+                app:layout_constraintStart_toStartOf="@+id/filterBox"
+                app:layout_constraintTop_toTopOf="@+id/filterBox"
+                app:srcCompat="@drawable/ic_filter" />
+
+        </FrameLayout>-->
+</layout>

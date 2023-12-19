@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cosmetics.lush.ui.login.otp_verify.OtpVerificationBindingViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.otp_verify.OtpVerificationFragment">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/login_bg" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftGD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/login_side_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightGD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/login_side_margin" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/otpCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_opacity_box"
+            android:paddingStart="@dimen/login_side_margin"
+            android:paddingTop="70dp"
+            android:paddingEnd="@dimen/login_side_margin"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/otpHeaderTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_neue_medium"
+                android:text="@string/otp_verification"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/otpHelpTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/helvetica_neue"
+                android:letterSpacing="0.03"
+                android:lineSpacingMultiplier="1.1"
+                android:text="@string/otp_help"
+                android:textAllCaps="false"
+                android:textColor="@color/greyTextNormal"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/otpHeaderTV" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/otpTIL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@android:color/transparent"
+                android:textColorHint="@color/greyTextNormal"
+                app:layout_constraintTop_toBottomOf="@+id/otpHelpTV">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/otpET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@color/underLineColor"
+                    android:fontFamily="@font/helvetica_neue"
+                    android:hint="@string/six_digit_otp"
+                    android:inputType="number"
+                    android:letterSpacing="0.02"
+                    android:maxLength="6"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:text="@={viewModel.otpValidationModel.otp}"
+                    android:textColor="@color/greyTextNormal"
+                    android:textSize="15sp"
+                    app:error="@{viewModel.otpErrorLiveData}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/otpBT"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:letterSpacing="0.05"
+                android:onClick="@{() -> viewModel.verifyOtp()}"
+                android:text="@string/verify_otp"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@+id/otpTIL" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/resendBT"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/helvetica_neue_medium"
+                android:letterSpacing="0.05"
+                android:text="@string/resend_otp"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@+id/otpBT" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/backIV"
+            android:layout_width="@dimen/back_iv_margin"
+            android:layout_height="@dimen/back_iv_margin"
+            android:layout_marginTop="20dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:src="@drawable/ic_back_selector"
+            app:layout_constraintStart_toEndOf="@+id/leftGD"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            layout="@layout/bottom_stripe"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_stripe_height"
+            android:layout_marginBottom="@dimen/bottom_strip_margin"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

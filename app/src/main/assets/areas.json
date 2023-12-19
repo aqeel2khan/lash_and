@@ -1,0 +1,442 @@
+{
+  "areas": [
+    {
+      "title": "Capital Governorate",
+      "items": [
+        {
+          "title": "Kuwait City"
+        },
+        {
+          "title": "Abdullah Al Salem"
+        },
+        {
+          "title": "Adailiya"
+        },
+        {
+          "title": "Bneid il-Gār"
+        },
+        {
+          "title": "Da'iya"
+        },
+        {
+          "title": "Dasma"
+        },
+        {
+          "title": "Dasmān"
+        },
+        {
+          "title": "Doha"
+        },
+        {
+          "title": "Doha Port"
+        },
+        {
+          "title": "Faiha"
+        },
+        {
+          "title": "Failaka"
+        },
+        {
+          "title": "Granada"
+        },
+        {
+          "title": "Jaber Al-Ahmad City"
+        },
+        {
+          "title": "Jibla"
+        },
+        {
+          "title": "Kaifan"
+        },
+        {
+          "title": "Khaldiya"
+        },
+        {
+          "title": "Mansūriya"
+        },
+        {
+          "title": "Mirgab"
+        },
+        {
+          "title": "Nahdha"
+        },
+        {
+          "title": "Nuzha"
+        },
+        {
+          "title": "Qadsiya"
+        },
+        {
+          "title": "Qurtuba"
+        },
+        {
+          "title": "Rawda"
+        },
+        {
+          "title": "Salhiya"
+        },
+        {
+          "title": "Sawābir"
+        },
+        {
+          "title": "Shamiya"
+        },
+        {
+          "title": "Rawda"
+        },
+        {
+          "title": "Sharq"
+        },
+        {
+          "title": "Shuwaikh"
+        },
+        {
+          "title": "Shuwaikh Industrial Area"
+        },
+        {
+          "title": "Shuwaikh Port"
+        },
+        {
+          "title": "Sulaibikhat"
+        },
+        {
+          "title": "Surra"
+        },
+        {
+          "title": "Umm an Namil Island"
+        },
+        {
+          "title": "Yarmūk"
+        },
+        {
+          "title": "North West Sulaibikhat"
+        }
+      ]
+    },
+    {
+      "title": "Hawalli Governorate",
+      "items": [
+        {
+          "title": "Anjafa"
+        },
+        {
+          "title": "Bayān"
+        },
+        {
+          "title": "Bi'da"
+        },
+        {
+          "title": "Hawally"
+        },
+        {
+          "title": "Hitteen"
+        },
+        {
+          "title": "Jabriya"
+        },
+        {
+          "title": "Maidan Hawalli"
+        },
+        {
+          "title": "Mishrif"
+        },
+        {
+          "title": "Mubarak Al-Jabir"
+        },
+        {
+          "title": "Nigra"
+        },
+        {
+          "title": "Rumaithiya"
+        },
+        {
+          "title": "Salam"
+        },
+        {
+          "title": "Salmiya"
+        },
+        {
+          "title": "Salwa"
+        },
+        {
+          "title": "Sha'ab"
+        },
+        {
+          "title": "Shuhada"
+        },
+        {
+          "title": "Siddiq"
+        },
+        {
+          "title": "South Surra"
+        },
+        {
+          "title": "Zahra"
+        }
+      ]
+    } ,
+    {
+      "title": "Mubarak Al-Kabeer Governorate",
+      "items": [
+        {
+          "title": "Abu Al Hasaniya"
+        },
+        {
+          "title": "Abu Futaira"
+        },
+        {
+          "title": "Adān"
+        },
+        {
+          "title": "Al Qurain"
+        },
+        {
+          "title": "Al-Qusour"
+        },
+        {
+          "title": "Fintās"
+        },
+        {
+          "title": "Funaitees"
+        },
+        {
+          "title": "Messilah"
+        },
+        {
+          "title": "Mubarak Al-Kabeer"
+        },
+        {
+          "title": "Sabah Al-Salem"
+        },
+        {
+          "title": "Subhan"
+        },
+        {
+          "title": "South Wista"
+        },
+        {
+          "title": "Wista"
+        }
+      ]
+    },
+    {
+      "title": "Ahmadi Governorate",
+      "items": [
+        {
+          "title": "Abu Hulaifa"
+        },
+        {
+          "title": "Abdullah Port"
+        },
+        {
+          "title": "Ahmadi"
+        },
+        {
+          "title": "Ali As-Salim"
+        },
+        {
+          "title": "Aqila"
+        },
+        {
+          "title": "Bar Al Ahmadi"
+        },
+        {
+          "title": "Bneidar"
+        },
+        {
+          "title": "Dhaher"
+        },
+        {
+          "title": "Fahaheel"
+        },
+        {
+          "title": "Fahad Al-Ahmad"
+        },
+        {
+          "title": "Hadiya"
+        },
+        {
+          "title": "Jaber Al-Ali"
+        },
+        {
+          "title": "Jawaher Al Wafra"
+        },
+        {
+          "title": "Jilei'a"
+        },
+        {
+          "title": "Khairan"
+        },
+        {
+          "title": "Mahbula"
+        },
+        {
+          "title": "Mangaf"
+        },
+        {
+          "title": "Miqwa"
+        },
+        {
+          "title": "New Khairan City"
+        },
+        {
+          "title": "New Wafra"
+        },
+        {
+          "title": "Nuwaiseeb"
+        },
+        {
+          "title": "Riqqa"
+        },
+        {
+          "title": "Sabah Al-Ahmad City"
+        },
+        {
+          "title": "Sabah Al-Ahmad Nautical City"
+        },
+        {
+          "title": "Sabahiya"
+        },
+        {
+          "title": "Shu'aiba (North & South)"
+        },
+        {
+          "title": "South Sabahiya"
+        },
+        {
+          "title": "Wafra"
+        },
+        {
+          "title": "Zoor"
+        },
+        {
+          "title": "Zuhar"
+        }
+      ]
+    },
+    {
+      "title": "Farwaniya Governorate",
+      "items": [
+        {
+          "title": "Abdullah Al-Mubarak"
+        },
+        {
+          "title": "Airport District"
+        },
+        {
+          "title": "Andalous"
+        },
+        {
+          "title": "Ardiya"
+        },
+        {
+          "title": "Ardiya Herafiya"
+        },
+        {
+          "title": "Ardiya Industrial Area"
+        },
+        {
+          "title": "Ashbelya"
+        },
+        {
+          "title": "Dhajeej"
+        },
+        {
+          "title": "Farwaniya"
+        },
+        {
+          "title": "Ferdous"
+        },
+        {
+          "title": "Jleeb Al-Shuyoukh"
+        },
+        {
+          "title": "Khaitan"
+        },
+        {
+          "title": "Omariya"
+        },
+        {
+          "title": "Rabiya"
+        },
+        {
+          "title": "Rai"
+        },
+        {
+          "title": "Riggae"
+        },
+        {
+          "title": "Rihab"
+        },
+        {
+          "title": "Sabah Al-Nasser"
+        },
+        {
+          "title": "Sabaq Al Hajan"
+        }
+      ]
+    },
+    {
+      "title": "Jahra Governorate",
+      "items": [
+        {
+          "title": "Abdali"
+        },
+        {
+          "title": "Al Nahda / East Sulaibikhat"
+        },
+        {
+          "title": "Amghara"
+        },
+        {
+          "title": "Bar Al Jahra Governorate"
+        },
+        {
+          "title": "Jahra"
+        },
+        {
+          "title": "Jahra Industrial Area"
+        },
+        {
+          "title": "Kabad"
+        },
+        {
+          "title": "Naeem"
+        },
+        {
+          "title": "Nasseem"
+        },
+        {
+          "title": "Oyoun"
+        },
+        {
+          "title": "Qasr"
+        },
+        {
+          "title": "Saad Al Abdullah City"
+        },
+        {
+          "title": "Salmi"
+        },
+        {
+          "title": "Sikrab"
+        },
+        {
+          "title": "South Doha / Qairawān"
+        },
+        {
+          "title": "Sulaibiya"
+        },
+        {
+          "title": "Sulaibiya Agricultural Area"
+        },
+        {
+          "title": "Taima"
+        },
+        {
+          "title": "Waha"
+        }
+      ]
+    }
+  ]
+}

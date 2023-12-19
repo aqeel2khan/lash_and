@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.cosmetics.lush.ui.homemodule.profile.ProfileViewModel" />
+    </data><!--
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="beforeDescendants"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        tools:context=".ui.profile.ProfileFragment">-->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/leftGD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/rightGD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="20dp" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/profileIV"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/profile_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/oval_black_bg"
+                android:padding="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/profileIV"
+                app:layout_constraintEnd_toEndOf="@+id/profileIV"
+                app:layout_constraintStart_toEndOf="@+id/profileIV"
+                app:layout_constraintTop_toTopOf="@+id/profileIV"
+                app:srcCompat="@drawable/ic_edit_white" />
+
+            <TextView
+                android:id="@+id/userNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/helvetica_neue_medium"
+                android:text='@{viewModel.nameDisplayed}'
+                android:textColor="@color/greyTextNormal"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profileIV"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/userEmailTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/helvetica_neue"
+                android:text="@{viewModel.emailDisplayed}"
+                android:textColor="@color/greyTextNormal"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userNameTV" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameTIL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/transparent"
+                android:textColorHint="@color/greyTextPressed"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/userEmailTV">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@color/underLineColor"
+                    android:fontFamily="@font/helvetica_neue_medium"
+                    android:hint="@string/first_name"
+                    android:inputType="textPersonName"
+                    android:letterSpacing="0.02"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:text="@={viewModel.firstName}"
+                    android:textColor="@color/greyTextNormal"
+                    android:textSize="15sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lastNameTIL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/transparent"
+                android:textColorHint="@color/greyTextPressed"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/nameTIL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lastNameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@color/underLineColor"
+                    android:fontFamily="@font/helvetica_neue_medium"
+                    android:hint="@string/last_name"
+                    android:inputType="textPersonName"
+                    android:letterSpacing="0.02"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:text="@={viewModel.lastName}"
+                    android:textColor="@color/greyTextNormal"
+                    android:textSize="15sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailTIL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/transparent"
+                android:textColorHint="@color/greyTextPressed"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/lastNameTIL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@color/underLineColor"
+                    android:fontFamily="@font/helvetica_neue_medium"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:letterSpacing="0.02"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:text="@={viewModel.email}"
+                    android:textColor="@color/greyTextNormal"
+                    android:textSize="15sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputCountry"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/transparent"
+                android:textColorHint="@color/greyTextPressed"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/emailTIL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@color/underLineColor"
+                    android:fontFamily="@font/helvetica_neue_medium"
+                    android:hint="@string/contact_number"
+                    android:inputType="phone"
+                    android:letterSpacing="0.02"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:text="@={viewModel.telephone}"
+                    android:textColor="@color/greyTextNormal"
+                    android:textSize="15sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/submitBT"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:letterSpacing="0.05"
+                android:onClick="@{()->viewModel.saveProfile()}"
+                android:text="@string/save"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/textInputCountry" />
+
+            <View
+                android:id="@+id/addressView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/grey_200"
+                app:layout_constraintTop_toBottomOf="@+id/submitBT" />
+
+            <TextView
+                android:id="@+id/myAddressTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_neue_medium"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:text="@string/my_address"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/addressView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/addressView" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/addressView"
+                app:layout_constraintEnd_toEndOf="@+id/myAddressTV"
+                app:layout_constraintStart_toStartOf="@+id/myAddressTV" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/buttonAddNewAddress"
+                addNewAddressVisibility="@{viewModel.count}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:layout_marginBottom="@dimen/dimen_20"
+                android:drawableStart="@drawable/ic_add_black"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:gravity="center"
+                android:text="@string/add_new_address"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/submitBT"
+                app:layout_constraintStart_toStartOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/addressView" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_20"
+                android:clipToPadding="true"
+                android:elevation="@dimen/dimen_4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addressView"
+                app:layout_constraintVertical_bias="0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.isAddressContentNotNeeded(viewModel.getProgressState)? View.GONE:View.VISIBLE}">
+
+                    <include
+                        address="@{viewModel.address}"
+                        layout="@layout/item_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/item_address" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewViewMore"
+                        addressCountVisibility="@{viewModel.count}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:paddingTop="@dimen/dimen_10"
+                        android:paddingEnd="@dimen/dimen_20"
+                        android:paddingBottom="@dimen/dimen_10"
+                        android:text="@{@string/view_more_address(viewModel.count)}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_14"
+                        app:textAllCaps="true"
+                        tools:text="View 13 more" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewAddNewAddress"
+                        addNewAddressVisibility="@{viewModel.count}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:paddingTop="@dimen/dimen_10"
+                        android:paddingEnd="@dimen/dimen_20"
+                        android:paddingBottom="@dimen/dimen_10"
+                        android:drawableStart="@drawable/ic_add_black"
+                        android:gravity="center"
+                        android:text="@string/add_new_address"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_16" />
+                </LinearLayout>
+
+                <ProgressBar
+                    android:layout_width="@dimen/dimen_40"
+                    android:layout_height="@dimen/dimen_40"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:layout_marginBottom="@dimen/dimen_20"
+                    android:visibility="@{viewModel.isProgressNeeded(viewModel.getProgressState)? View.VISIBLE:View.GONE}" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!--   </LinearLayout>-->
+</layout>

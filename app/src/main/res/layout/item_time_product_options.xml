@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cosmetics.lush.ui.products.product_details.productoption.ProductOptionsViewModel" />
+
+        <variable
+            name="option"
+            type="com.cosmetics.domain.model.product.Option" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_15"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/ProductCheckoutTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:text="@{option.name}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDateText"
+            style="@style/ProductOptionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:layout_marginBottom="@dimen/dimen_15"
+            android:drawableStart="@drawable/ic_white_time"
+            android:text="@{option.getOptionValueName()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/select_time" />
+
+    </LinearLayout>
+</layout><!--
+    android:text="@{@string/select_item(option.name)}"-->

@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attrs="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="productDetailViewModel"
+            type="com.cosmetics.lush.ui.products.product_details.ProductDetailsViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/productImagePager"
+                setImageSlider="@{productDetailViewModel.product.getImageList()}"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="@dimen/dimen_3"
+                android:background="@color/white"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.rd.PageIndicatorView
+                android:id="@+id/pageIndicatorView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productImagePager"
+                app:piv_animationType="scale"
+                app:piv_dynamicCount="true"
+                app:piv_interactiveAnimation="true"
+                app:piv_selectedColor="@color/colorAccent"
+                app:piv_unselectedColor="@color/grey_300"
+                app:piv_viewPager="@id/productImagePager"
+                attrs:piv_padding="3dp"
+                attrs:piv_radius="3dp" />
+
+            <ImageView
+                android:id="@+id/imageViewWishList"
+                setWishListImage="@{productDetailViewModel.productWishListStatus}"
+                android:layout_width="@dimen/dimen_30"
+                android:layout_height="@dimen/dimen_30"
+                android:layout_margin="@dimen/dimen_10"
+                android:background="@drawable/oval_grey_bg"
+                android:elevation="1dp"
+                android:onClick="@{()->productDetailViewModel.handleWishListClick()}"
+                android:padding="@dimen/dimen_7"
+                android:paddingTop="@dimen/dimen_7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/productImagePager"
+                app:srcCompat="@drawable/ic_favourite" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/leftGD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="10dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/rightGD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="10dp" />
+
+            <TextView
+                android:id="@+id/productNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:text="@{productDetailViewModel.product.formattedName}"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="@id/rightGD"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/pageIndicatorView" />
+
+            <TextView
+                android:id="@+id/textViewProductCode"
+                style="@style/TitleTextProductDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_5"
+                android:text="@string/product_code"
+                android:textSize="@dimen/font_13"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@+id/stockStatusTV"
+                app:layout_constraintEnd_toStartOf="@+id/productSubTitleTV"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@+id/stockStatusTV"
+                app:layout_constraintTop_toTopOf="@+id/stockStatusTV" />
+
+            <TextView
+                android:id="@+id/productSubTitleTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:maxLines="4"
+                android:text="@{productDetailViewModel.product.model}"
+                android:textColor="@color/grey_700"
+                android:textSize="@dimen/font_13"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/textViewProductCode" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.63" />
+
+            <TextView
+                android:id="@+id/textViewAvailability"
+                style="@style/TitleTextProductDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_neue"
+                android:text="@string/availability_with_semicolon"
+                android:textSize="@dimen/font_13"
+                app:layout_constraintBottom_toBottomOf="@+id/stockStatusTV"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toTopOf="@+id/stockStatusTV" />
+
+            <TextView
+                android:id="@+id/stockStatusTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_5"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:background="@drawable/black_box_filled_bg"
+                android:fontFamily="@font/helvetica_neue"
+                android:paddingStart="5dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="5dp"
+                android:paddingBottom="3sp"
+                android:text="@{productDetailViewModel.product.stockStatus}"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/textViewAvailability"
+                app:layout_constraintTop_toBottomOf="@+id/productNameTV"
+                tools:text="In Stock" />
+
+            <TextView
+                android:id="@+id/productDiscountedPriceTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:text="@{productDetailViewModel.product.getFinalePriceWithFormatted()}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/stockStatusTV"
+                tools:text="KD 200" />
+
+            <TextView
+                android:id="@+id/productOriginalPriceTV"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/helvetica_neue_medium"
+                android:text="@{productDetailViewModel.product.priceExcludingTaxFormated}"
+                android:textColor="@color/grey_400"
+                android:textSize="14sp"
+                android:visibility="@{productDetailViewModel.product.isSpecialPriceAvailable()? View.VISIBLE: View.GONE}"
+                app:layout_constraintBottom_toBottomOf="@+id/productDiscountedPriceTV"
+                app:layout_constraintStart_toEndOf="@+id/productDiscountedPriceTV"
+                app:layout_constraintTop_toTopOf="@+id/productDiscountedPriceTV" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/productReviewRB"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:isIndicator="true"
+                android:max="5"
+                android:progressTint="@android:color/black"
+                android:rating="@{productDetailViewModel.product.rating}"
+                app:layout_constraintStart_toEndOf="@id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/productDiscountedPriceTV" />
+
+            <TextView
+                android:id="@+id/productReviewsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/helvetica_neue"
+                android:text="@{@string/no_reviews(Integer.toString(productDetailViewModel.product.reviews.reviewTotal))}"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@id/productReviewRB"
+                app:layout_constraintStart_toEndOf="@id/productReviewRB"
+                app:layout_constraintTop_toTopOf="@+id/productReviewRB" />
+
+            <TextView
+                android:id="@+id/totalPriceTV"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:background="@drawable/black_box_stroke_bg"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:gravity="center"
+                android:text="@{@string/total_in_kd(productDetailViewModel.totalAmount)}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/productCounter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productReviewRB" />
+
+            <com.cosmetics.lush.ui.common_views.ProductCounter
+                android:id="@+id/productCounter"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/totalPriceTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/totalPriceTV"
+                app:layout_constraintTop_toTopOf="@+id/totalPriceTV" />
+
+            <TextView
+                android:id="@+id/addToCartTV"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:background="@color/black"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:gravity="center"
+                android:text="@string/add_to_cart"
+                android:textColor="@color/white_text_selector"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/totalPriceTV" />
+
+            <TextView
+                android:id="@+id/productDetailsTV"
+                style="@style/TitleTextProductDetails"
+                viewDataBasedVisibility="@{productDetailViewModel.product.description}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:gravity="center_vertical"
+                android:paddingTop="@dimen/dimen_10"
+                android:paddingBottom="@dimen/dimen_10"
+                android:text="@string/product_details"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewDiscount" />
+
+            <TextView
+                android:id="@+id/productDiscountTV"
+                style="@style/TitleTextProductDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:gravity="center_vertical"
+                android:paddingTop="@dimen/dimen_10"
+                android:paddingBottom="@dimen/dimen_10"
+                android:text="@string/discounts"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/addToCartTV" />
+
+            <ImageView
+                android:id="@+id/productDetailsDropDownIV"
+                viewDataBasedVisibility="@{productDetailViewModel.product.description}"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/productDetailsTV"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintTop_toTopOf="@+id/productDetailsTV"
+                app:srcCompat="@drawable/ic_down_arrow_grey" />
+
+            <ImageView
+                android:id="@+id/productDiscountDropDownIV"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/productDiscountTV"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintTop_toTopOf="@+id/productDiscountTV"
+                app:srcCompat="@drawable/ic_down_arrow_grey" />
+
+            <WebView
+                android:id="@+id/productDetailsInfoTV"
+                loadHtml="@{productDetailViewModel.product.description}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_neue"
+                android:includeFontPadding="false"
+                android:lineSpacingMultiplier="1.1"
+                android:paddingBottom="10dp"
+                android:textColor="@color/grey_600"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/productDetailsTV" />
+
+            <View
+                android:id="@+id/view"
+                viewDataBasedVisibility="@{productDetailViewModel.product.description}"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:background="@color/underLineColor"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@+id/productDetailsTV"
+                app:layout_constraintEnd_toStartOf="@+id/productDetailsDropDownIV"
+                app:layout_constraintStart_toEndOf="@+id/productDetailsTV"
+                app:layout_constraintTop_toTopOf="@+id/productDetailsTV" />
+
+            <View
+                android:id="@+id/viewDiscount"
+                viewDataBasedVisibility="@{productDetailViewModel.product.description}"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:background="@color/underLineColor"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@+id/productDiscountTV"
+                app:layout_constraintEnd_toStartOf="@+id/productDetailsDropDownIV"
+                app:layout_constraintStart_toEndOf="@+id/productDiscountTV"
+                app:layout_constraintTop_toTopOf="@+id/productDiscountTV" />
+
+            <View
+                android:id="@+id/viewClickEnablerProductDetails"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dimen_10"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@+id/productDetailsTV"
+                app:layout_constraintEnd_toEndOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/productDetailsTV"
+                app:layout_constraintTop_toTopOf="@+id/productDetailsTV" />
+
+            <View
+                android:id="@+id/viewClickEnablerDiscountDetails"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dimen_10"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@+id/productDiscountTV"
+                app:layout_constraintEnd_toEndOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/productDiscountTV"
+                app:layout_constraintTop_toTopOf="@+id/productDiscountTV" />
+            <!--
+
+                            <TextView
+                                android:id="@+id/productFeaturesTV"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="1dp"
+                                android:fontFamily="@font/helvetica_neue_medium"
+                                android:gravity="center_vertical"
+                                android:text="@string/product_features"
+                                android:textColor="@color/greyTextNormal"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                                app:layout_constraintTop_toBottomOf="@+id/productDetailsInfoTV" />
+
+                            <ImageView
+                                android:id="@+id/productFeaturesDropDownIV"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                                app:layout_constraintTop_toTopOf="@+id/productFeaturesTV"
+                                app:srcCompat="@drawable/ic_down_arrow_grey" />
+
+                            <TextView
+                                android:id="@+id/productFeaturesInfoTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/helvetica_neue"
+                                android:includeFontPadding="false"
+                                android:lineSpacingMultiplier="1.1"
+                                android:paddingBottom="10dp"
+                                android:text="@string/lorem_ipsum"
+                                android:textColor="@color/grey_600"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                                app:layout_constraintTop_toBottomOf="@+id/productFeaturesTV" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:background="@color/underLineColor"
+                                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                                app:layout_constraintTop_toBottomOf="@+id/productFeaturesInfoTV" />
+
+                            <TextView
+                                android:id="@+id/freshIngredientTV"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="1dp"
+                                android:fontFamily="@font/helvetica_neue_medium"
+                                android:gravity="center_vertical"
+                                android:text="@string/fresh_ingredient"
+                                android:textColor="@color/greyTextNormal"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                                app:layout_constraintTop_toBottomOf="@+id/productFeaturesInfoTV" />
+
+                            <ImageView
+                                android:id="@+id/freshIngredientDropDownIV"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                                app:layout_constraintTop_toTopOf="@+id/freshIngredientTV"
+                                app:srcCompat="@drawable/ic_down_arrow_grey" />
+
+                            <TextView
+                                android:id="@+id/freshIngredientInfoTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/helvetica_neue"
+                                android:includeFontPadding="false"
+                                android:lineSpacingMultiplier="1.1"
+                                android:paddingBottom="10dp"
+                                android:text="@string/lorem_ipsum"
+                                android:textColor="@color/grey_600"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                                app:layout_constraintTop_toBottomOf="@+id/freshIngredientTV" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:background="@color/underLineColor"
+                                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                                app:layout_constraintTop_toBottomOf="@+id/freshIngredientInfoTV" />
+
+                            <TextView
+                                android:id="@+id/howToUseTV"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="1dp"
+                                android:fontFamily="@font/helvetica_neue_medium"
+                                android:gravity="center_vertical"
+                                android:text="@string/how_to_use"
+                                android:textColor="@color/greyTextNormal"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                                app:layout_constraintTop_toBottomOf="@+id/freshIngredientInfoTV" />
+
+                            <ImageView
+                                android:id="@+id/howToUseDropDownIV"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                                app:layout_constraintTop_toTopOf="@+id/howToUseTV"
+                                app:srcCompat="@drawable/ic_down_arrow_grey" />
+
+                            <TextView
+                                android:id="@+id/howToUseInfoTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/helvetica_neue"
+                                android:includeFontPadding="false"
+                                android:lineSpacingMultiplier="1.1"
+                                android:paddingBottom="10dp"
+                                android:text="@string/lorem_ipsum"
+                                android:textColor="@color/grey_600"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                                app:layout_constraintTop_toBottomOf="@+id/howToUseTV" />
+            -->
+
+            <!--     <View
+                     android:layout_width="0dp"
+                     android:layout_height="1dp"
+                     android:background="@color/underLineColor"
+                     app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                     app:layout_constraintStart_toEndOf="@+id/leftGD"
+                     app:layout_constraintTop_toBottomOf="@+id/howToUseInfoTV" />
+ -->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewAttributes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@+id/rightGD"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/productDetailsInfoTV"
+                bind:itemCount="1" />
+
+            <TextView
+                android:id="@+id/ratingReviewTV"
+                style="@style/TitleTextProductDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:text="@string/product_ratings_and_reviews"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toStartOf="@+id/textViewPostReview"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewAttributes"
+                app:layout_goneMarginTop="@dimen/dimen_15" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDiscount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toStartOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/productDiscountTV" />
+
+            <TextView
+                android:id="@+id/textViewPostReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_rate_us_bg"
+                android:drawableEnd="@drawable/ic_star_boardered"
+                android:drawablePadding="@dimen/dimen_5"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:paddingStart="@dimen/dimen_15"
+                android:paddingTop="@dimen/dimen_6"
+                android:paddingEnd="@dimen/dimen_5"
+                android:paddingBottom="@dimen/dimen_6"
+                android:text="@string/post_a_review"
+                android:textColor="@color/greyTextNormal"
+                android:textSize="@dimen/font_13"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintTop_toTopOf="@+id/ratingReviewTV" />
+
+            <androidx.constraintlayout.widget.Group
+                viewGroupDataBasedVisibility="@{productDetailViewModel.product.isDiscountAvailable()}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="productDiscountDropDownIV,productDiscountTV,viewDiscount,viewClickEnablerDiscountDetails" />
+
+            <TextView
+                android:id="@+id/ratingTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:includeFontPadding="false"
+                android:text="@{Integer.toString(productDetailViewModel.product.rating)}"
+                android:textColor="@color/black"
+                android:textSize="36sp"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/ratingReviewTV" />
+
+            <TextView
+                android:id="@+id/ratingOutTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/helvetica_neue_bold"
+                android:includeFontPadding="false"
+                android:text="@string/out_of_5"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/ratingTV" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/productRatingRB"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:isIndicator="true"
+                android:max="5"
+                android:progressTint="@color/greyTextNormal"
+                android:rating="@{productDetailViewModel.product.rating}"
+                app:layout_constraintBottom_toTopOf="@+id/totalRatingsTV"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@id/leftGD" />
+
+            <TextView
+                android:id="@+id/totalRatingsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_neue"
+                android:includeFontPadding="false"
+                android:text="@{@string/total_ratings(Integer.toString(productDetailViewModel.product.reviews.reviewTotal))}"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/ratingOutTV"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/leftGD" />
+
+            <TextView
+                android:id="@+id/seeAllRatingsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_neue"
+                android:text="@string/view_all"
+                android:textColor="@color/black_text_selector"
+                android:textSize="@dimen/font_14"
+                android:visibility="@{productDetailViewModel.product.reviews.reviewList.size()>1?View.VISIBLE : View.GONE }"
+                app:layout_constraintBottom_toBottomOf="@+id/ratingOutTV"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintTop_toTopOf="@+id/ratingTV" />
+
+            <include
+                android:id="@+id/productRatingCV"
+                layout="@layout/product_rating_item"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:visibility="@{productDetailViewModel.isProductReviewListVisibile?View.VISIBLE : View.GONE }"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/ratingOutTV"
+                bind:review="@{productDetailViewModel.reviewItem}" />
+
+            <!--<androidx.recyclerview.widget.RecyclerView
+                id
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/ratingOutTV"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                />-->
+
+            <TextView
+                android:id="@+id/moreCategoryTV"
+                style="@style/TitleTextProductDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/more_in_this_category"
+                android:visibility="@{productDetailViewModel.isMoreProductInCategoryVisible? View.VISIBLE : View.GONE  }"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/productRatingCV" />
+
+            <TextView
+                android:id="@+id/viewAllMoreCategoryTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_neue"
+                android:text="@string/view_all"
+                android:textColor="@color/black_text_selector"
+                android:textSize="14sp"
+                android:visibility="@{productDetailViewModel.isMoreProductInCategoryVisible? View.VISIBLE : View.GONE  }"
+                app:layout_constraintBottom_toBottomOf="@+id/moreCategoryTV"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintTop_toTopOf="@+id/moreCategoryTV" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/moreCategoryRV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:nestedScrollingEnabled="false"
+                android:visibility="@{productDetailViewModel.isMoreProductInCategoryVisible? View.VISIBLE : View.GONE  }"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/moreCategoryTV" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:visibility="@{productDetailViewModel.isMoreProductInCategoryLoadingProgress()? View.VISIBLE : View.GONE  }"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/moreCategoryTV" />
+
+            <TextView
+                android:id="@+id/relatedProductsTV"
+                style="@style/TitleTextProductDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/related_products"
+                android:visibility="@{productDetailViewModel.isRelatedProductVisible? View.VISIBLE : View.GONE  }"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/moreCategoryRV" />
+
+            <TextView
+                android:id="@+id/viewAllrelatedProductsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_neue"
+                android:text="@string/view_all"
+                android:textColor="@color/black_text_selector"
+                android:textSize="@dimen/font_14"
+                android:visibility="@{productDetailViewModel.isRelatedProductVisible? View.VISIBLE : View.GONE  }"
+                app:layout_constraintBottom_toBottomOf="@+id/relatedProductsTV"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintTop_toTopOf="@+id/relatedProductsTV" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/relatedProductsRV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:nestedScrollingEnabled="false"
+                android:visibility="@{productDetailViewModel.isRelatedProductVisible? View.VISIBLE : View.GONE  }"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/relatedProductsTV" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:layout_marginBottom="@dimen/dimen_20"
+                android:visibility="@{productDetailViewModel.isRelatedProductLoadingProgress()? View.VISIBLE : View.GONE  }"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/rightGD"
+                app:layout_constraintStart_toEndOf="@+id/leftGD"
+                app:layout_constraintTop_toBottomOf="@+id/relatedProductsTV" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

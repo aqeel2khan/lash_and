@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.cosmetics.lush.ui.homemodule.cart.MyCartViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="beforeDescendants"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/textViewErrorMsg"
+            viewDataBasedVisibility="@{viewModel.message}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:paddingTop="@dimen/dimen_10"
+            android:text="@{viewModel.message}"
+            android:textColor="@android:color/holo_red_light"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/containerRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toTopOf="@+id/textViewAmount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewErrorMsg"
+            app:layout_constraintVertical_bias="0">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cartRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:paddingTop="@dimen/dimen_20"
+                android:layout_marginEnd="20dp"
+                android:clipToPadding="false"
+                android:paddingBottom="@dimen/dimen_10"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/cart_list_item" />
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/tagIV"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/applyTV"
+            app:layout_constraintStart_toStartOf="@+id/havePromoCodeTV"
+            app:layout_constraintTop_toTopOf="@+id/applyTV"
+            app:srcCompat="@drawable/ic_tag" />
+
+            <EditText
+                android:id="@+id/promoCodeET"
+                editTextActivate="@{viewModel.couponStatus==viewModel.couponApplied}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:hint="@string/promocode"
+                android:inputType="textCapCharacters"
+                android:text="@={viewModel.coupon}"
+                android:textAllCaps="true"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/applyTV"
+                app:layout_constraintEnd_toStartOf="@+id/applyTV"
+                app:layout_constraintStart_toEndOf="@+id/tagIV"
+                app:layout_constraintTop_toTopOf="@+id/applyTV" />
+
+            <TextView
+                android:id="@+id/havePromoCodeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/have_a_promocode"
+                android:textColor="@color/greyTextNormal"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toTopOf="@+id/promoCodeET"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/applyTV"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/black_box_filled_bg"
+                android:fontFamily="@font/helvetica_neue"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:onClick="@{()->viewModel.handleCouponClick()}"
+                android:text="@{viewModel.couponStatus==viewModel.couponApplied ? @string/remove : @string/apply}"
+                android:textColor="@color/white_text_selector"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewCheckOut"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewNoDataFound"
+            style="@style/TextLabelNoDataFound"
+            viewDataBasedVisibility="@{viewModel.errorMessage}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.errorMessage}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupCartWithData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.isProductListVisible? View.VISIBLE:View.GONE}"
+            app:constraint_referenced_ids="containerRecyclerView,textViewAmount,textViewCheckOut" />
+
+        <TextView
+            android:id="@+id/textViewCheckOut"
+            style="@style/CommonDarkButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:gravity="center"
+            android:text="@string/checkout_now"
+            android:textColor="@color/white_text_selector"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewAmount" />
+
+        <TextView
+            android:id="@+id/textViewAmount"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:gravity="center"
+            android:text="@{@string/total_in_cart(viewModel.totalPrice)}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewCheckOut"
+            app:layout_constraintEnd_toStartOf="@+id/textViewCheckOut"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewCheckOut" />
+        <!--
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bottomCV"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:elevation="4dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/totalTV"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:fontFamily="@font/helvetica_neue_medium"
+                    android:gravity="center"
+                    android:text="@{@string/total_in_cart(viewModel.totalPrice)}"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/checkOutTV"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/checkOutTV"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    android:fontFamily="@font/helvetica_neue_medium"
+                    android:gravity="center"
+                    android:text="@string/checkout_now"
+                    android:textColor="@color/white_text_selector"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/totalTV" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

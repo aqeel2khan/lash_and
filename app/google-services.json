@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "647746340483",
+    "firebase_url": "https://lush-41e2e.firebaseio.com",
+    "project_id": "lush-41e2e",
+    "storage_bucket": "lush-41e2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647746340483:android:837a15184ce57f675bbdb6",
+        "android_client_info": {
+          "package_name": "com.cosmetics.lush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647746340483-pc4r0fv3k95l9v8a6p9sj383fsbquci1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBL6wV5K9jF-6eQEdWtmaYbyXFM2gaFoyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647746340483-pc4r0fv3k95l9v8a6p9sj383fsbquci1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647746340483:android:577d30771a4f28805bbdb6",
+        "android_client_info": {
+          "package_name": "com.cosmetics_kuwait.lush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647746340483-pc4r0fv3k95l9v8a6p9sj383fsbquci1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBL6wV5K9jF-6eQEdWtmaYbyXFM2gaFoyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647746340483-pc4r0fv3k95l9v8a6p9sj383fsbquci1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

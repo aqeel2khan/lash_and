@@ -1,0 +1,72 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
+    </style>
+
+    <style name="AppTheme" parent="SplashTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/grey_50</item>
+        <item name="android:windowTranslucentStatus">false</item>
+    </style>
+
+    <style name="ActionButtonStyle" parent="Widget.AppCompat.ActionButton">
+        <item name="android:minWidth">0dip</item>
+        <item name="android:paddingStart">8dip</item>
+        <item name="android:paddingEnd">8dip</item>
+    </style>
+
+    <style name="TabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/helvetica_neue</item>
+        <item name="android:letterSpacing">0.2</item>
+    </style>
+
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/grey_text_selector</item>
+        <item name="android:textColorPrimary">@color/greyTextNormal</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:fontFamily">@font/helvetica_neue</item>
+        <item name="textColorAlertDialogListItem">@color/grey_text_selector</item>
+        <item name="android:windowTitleStyle">@style/TitleDialogTextStyle</item>
+        <item name="android:textColorAlertDialogListItem">@color/greyTextNormal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAppearance">@style/AlertDialogMessageAppearance</item>
+    </style>
+
+    <style name="AlertDialogMessageAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/greyTextNormal</item>
+        <item name="android:fontFamily">@font/helvetica_neue</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="TitleDialogTextStyle" parent="Base.DialogWindowTitle.AppCompat">
+        <item name="android:textColor">@color/greyTextNormal</item>
+        <item name="android:fontFamily">@font/lush_font</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="MyAppThemeThree" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/black</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/DatePickerButtonStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DatePickerButtonStyle</item>
+    </style>
+
+    <style name="DatePickerButtonStyle" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+</resources>

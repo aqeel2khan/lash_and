@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.cosmetics.lush.ui.homemodule.cart.address.CartAddressViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dimen_90">
+
+                <TextView
+                    android:id="@+id/textViewAddNewAddress"
+                    style="@style/TextLabelMediumDarkTittle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:drawableStart="@drawable/ic_add_black"
+                    android:gravity="center"
+                    android:onClick="@{()->viewModel.updateAddress()}"
+                    android:paddingTop="@dimen/dimen_16"
+                    android:paddingEnd="@dimen/dimen_16"
+                    android:text="@string/add_new_address"
+                    android:visibility="@{viewModel.isPaymentAddressAvailable()?View.GONE:View.VISIBLE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewDeliveryAddressValue" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewDeliveryAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:layout_marginBottom="@dimen/dimen_10">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView_PaymentAddress"
+                            style="@style/TextLabelDarkTittle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_16"
+                            android:layout_marginTop="@dimen/dimen_16"
+                            android:layout_marginEnd="@dimen/dimen_16"
+                            android:text="@string/select_payment_address"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewDone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_16"
+                            android:layout_marginEnd="@dimen/dimen_16"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_check_circle" />
+
+                        <TextView
+                            android:id="@+id/textViewName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_16"
+                            android:layout_marginTop="@dimen/dimen_16"
+                            android:layout_marginEnd="@dimen/dimen_16"
+                            android:layout_marginBottom="@dimen/dimen_16"
+                            android:text="@{viewModel.paymentSelectedAddress.getUserName()}"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/font_17"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView_PaymentAddress"
+                            tools:text="@string/lorem_ipsum" />
+
+                        <TextView
+                            android:id="@+id/textViewDeliveryAddressValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_16"
+                            android:layout_marginTop="@dimen/dimen_2"
+                            android:layout_marginEnd="@dimen/dimen_16"
+                            android:layout_marginBottom="@dimen/dimen_10"
+                            android:text="@{viewModel.paymentSelectedAddress.getFullAddress()}"
+                            android:textDirection="locale"
+                            app:layout_constraintBottom_toTopOf="@+id/textViewChangeAddress"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewName"
+                            tools:text="@string/lorem_ipsum" />
+
+                        <androidx.constraintlayout.widget.Group
+                            android:id="@+id/groupPaymentAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="@{viewModel.isPaymentAddressRegistered()? View.VISIBLE : View.GONE }"
+                            app:constraint_referenced_ids="imageViewDone,textViewName,textViewChangeAddress,textViewDeliveryAddressValue" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerView_PaymentAddress"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_12"
+                            android:layoutDirection="locale"
+                            android:textDirection="locale"
+                            android:visibility="@{viewModel.isPaymentAddressSelectionActive? View.VISIBLE : View.GONE }"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView_PaymentAddress"
+                            app:layout_constraintVertical_bias="0" />
+
+                        <TextView
+                            android:id="@+id/textViewAdd_PaymentAddress"
+                            style="@style/TextLabelMediumDarkTittle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_add_black"
+                            android:paddingTop="@dimen/dimen_12"
+                            android:paddingBottom="@dimen/dimen_16"
+                            android:text="@string/add_new_payment_address"
+                            android:textDirection="locale"
+                            android:visibility="@{viewModel.isPaymentAddressSelectionActive? View.VISIBLE: View.GONE }"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/paymentBarrier"
+                            app:layout_constraintVertical_bias="0" />
+
+                        <TextView
+                            android:id="@+id/textViewRetry_PaymentAddress"
+                            style="@style/TextLabelMediumDarkTittle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_16"
+                            android:layout_marginBottom="@dimen/dimen_12"
+                            android:drawableEnd="@drawable/ic_refresh_black"
+                            android:onClick="@{()->viewModel.retry()}"
+                            android:text="@string/retry"
+                            android:visibility="@{viewModel.isRetryForPaymentAddress()? View.VISIBLE : View.GONE }"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView_PaymentAddress" />
+
+                        <androidx.constraintlayout.widget.Barrier
+                            android:id="@+id/paymentBarrier"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:barrierDirection="bottom"
+                            app:constraint_referenced_ids="textViewRetry_PaymentAddress,recyclerView_PaymentAddress" />
+
+                        <TextView
+                            android:id="@+id/textViewChangeAddress"
+                            style="@style/TextLabelMediumDarkTittle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dimen_16"
+                            android:layout_marginBottom="@dimen/dimen_16"
+                            android:layoutDirection="locale"
+                            android:onClick="@{()->viewModel.updateAddress()}"
+                            android:text="@string/change_address"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewDeliveryAddressValue" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView_DeliveryAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:layout_marginTop="@dimen/dimen_6"
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:visibility="@{viewModel.isShippingInfoNeeded()? View.VISIBLE:View.GONE}">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="@dimen/dimen_16">
+
+                        <TextView
+                            android:id="@+id/textViewDeliveryAddress"
+                            style="@style/TextLabelDarkTittle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_16"
+                            android:layout_marginTop="@dimen/dimen_16"
+                            android:layout_marginEnd="@dimen/dimen_16"
+                            android:text="@string/select_delivery_address"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <!--       <TextView
+                                   android:id="@+id/textViewPaymentAddressValue"
+                                   android:layout_width="0dp"
+                                   android:layout_height="wrap_content"
+                                   android:layout_marginStart="@dimen/dimen_16"
+                                   android:layout_marginEnd="@dimen/dimen_16"
+                                   android:layout_marginBottom="@dimen/dimen_16"
+                                   android:text="@{viewModel.paymentSelectedAddress.getFullAddress()}"
+                                   android:visibility="@{viewModel.isDeliveryAddressSelectionActive? View.VISIBLE : View.GONE }"
+                                   app:layout_constraintBottom_toBottomOf="parent"
+                                   app:layout_constraintEnd_toEndOf="parent"
+                                   app:layout_constraintStart_toStartOf="parent"
+                                   app:layout_constraintTop_toBottomOf="@+id/textViewPaymentAddress"
+                                   tools:text="@string/lorem_ipsum" />-->
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerViewDeliveryAddress"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_16"
+                            android:textDirection="locale"
+                            android:visibility="@{viewModel.isPaymentAddressSelectionActive? View.GONE : View.VISIBLE }"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewDeliveryAddress"
+                            app:layout_constraintVertical_bias="0" />
+
+                        <TextView
+                            android:id="@+id/textViewAddDeliveryAddress"
+                            style="@style/TextLabelMediumDarkTittle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_add_black"
+                            android:paddingTop="@dimen/dimen_12"
+                            android:paddingBottom="@dimen/dimen_16"
+                            android:text="@string/add_new_delivery_address"
+                            android:textDirection="locale"
+                            android:visibility="@{viewModel.isPaymentAddressSelectionActive? View.GONE : View.VISIBLE }"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/recyclerViewDeliveryAddress"
+                            app:layout_constraintVertical_bias="0" />
+
+                        <TextView
+                            style="@style/TextLabelMediumDarkTittle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_16"
+                            android:layout_marginBottom="@dimen/dimen_12"
+                            android:drawableEnd="@drawable/ic_refresh_black"
+                            android:onClick="@{()->viewModel.retry()}"
+                            android:text="@string/retry"
+                            android:visibility="@{viewModel.isRetryForDeliveryAddress()? View.VISIBLE : View.GONE }"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewDeliveryAddress" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonContinue"
+            style="@style/CommonDarkButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:layout_marginBottom="@dimen/dimen_16"
+            android:onClick="@{()->viewModel.callCartAddressRequest()}"
+            android:text="@string/title_continue" />
+
+    </FrameLayout>
+</layout>

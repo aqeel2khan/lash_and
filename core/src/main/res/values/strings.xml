@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">core</string>
+    <string name="bath">Bath</string>
+    <string name="body">Body</string>
+    <string name="face">Face</string>
+    <string name="faces">Faces</string>
+    <string name="hairs">Hairs</string>
+    <string name="fragrances">Fragrances</string>
+    <string name="gifts">Gifts</string>
+    <string name="spa">Spa</string>
+
+    <string name="body_scrub">Body Scrub</string>
+    <string name="jelly_bomb">Jelly Bomb</string>
+    <string name="bath_bombs">Bath Bombs</string>
+    <string name="bubble_bars">Bubble Bars</string>
+
+    <string name="lorem_ipsum">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</string>
+    <string name="ok">Ok</string>
+    <string name="select_time">Select Time</string>
+    <string name="retry">Retry</string>
+</resources>

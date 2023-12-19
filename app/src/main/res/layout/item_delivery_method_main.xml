@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shippingMethod"
+            type="com.cosmetics.domain.model.home.delivermethods.ShippingMethod" />
+
+        <variable
+            name="viewModel"
+            type="com.cosmetics.lush.ui.homemodule.cart.delivery.DeliveryMethodViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_16"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewName"
+            style="@style/TextLabelDarkTittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_12"
+            android:text="@{shippingMethod.title}"
+            android:textSize="@dimen/font_16"
+            tools:text="Rissmon Suresh" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewDeliverySubType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:layout_marginEnd="@dimen/dimen_12"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:text="Rissmon Suresh" />
+    </LinearLayout>
+</layout>

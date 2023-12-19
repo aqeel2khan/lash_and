@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/filterCL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/filter_bg"
+    android:clickable="true"
+    android:elevation="8dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <TextView
+        android:id="@+id/filterHeaderTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/helvetica_neue_medium"
+        android:letterSpacing="0.02"
+        android:text="@string/filter"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/filterSortByTV"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/helvetica_neue_medium"
+        android:gravity="center_vertical"
+        android:text="@string/sort_by"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filterHeaderTV" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/underLineColor"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginEnd="@dimen/dimen_16"
+        app:layout_constraintBottom_toBottomOf="@id/filterSortByTV"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewDropDown"
+        app:layout_constraintStart_toEndOf="@id/filterSortByTV"
+        app:layout_constraintTop_toTopOf="@+id/filterSortByTV" />
+
+    <ImageView
+        android:id="@+id/imageViewDropDown"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/filterSortByTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/filterSortByTV"
+        app:srcCompat="@drawable/ic_down_arrow_grey_light" />
+
+    <RadioGroup
+        android:id="@+id/paymentOptionsRB"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filterSortByTV">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/codRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white"
+            android:checked="true"
+            android:fontFamily="@font/helvetica_neue"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
+            android:text="@string/cash_on_delivery"
+            android:textSize="16sp" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/cardRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:buttonTint="@color/white"
+            android:fontFamily="@font/helvetica_neue"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
+            android:text="@string/credit_debit_card"
+            android:textSize="16sp" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/knetRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:buttonTint="@color/white"
+            android:fontFamily="@font/helvetica_neue"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
+            android:text="@string/knet"
+            android:textSize="16sp" />
+
+    </RadioGroup>
+    <!--
+
+        <TextView
+            android:id="@+id/filterTypeTV"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:gravity="center_vertical"
+            android:text="@string/type"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/filterSortByTV" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/underLineColor"
+            app:layout_constraintTop_toBottomOf="@+id/filterTypeTV" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/filterTypeTV"
+            app:layout_constraintEnd_toEndOf="@+id/filterTypeTV"
+            app:layout_constraintTop_toTopOf="@+id/filterTypeTV"
+            app:srcCompat="@drawable/ic_down_arrow_grey_light" />
+
+        <TextView
+            android:id="@+id/filterOthersTV"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:gravity="center_vertical"
+            android:text="@string/others"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/filterTypeTV" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/underLineColor"
+            app:layout_constraintTop_toBottomOf="@+id/filterOthersTV" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/filterOthersTV"
+            app:layout_constraintEnd_toEndOf="@+id/filterOthersTV"
+            app:layout_constraintTop_toTopOf="@+id/filterOthersTV"
+            app:srcCompat="@drawable/ic_down_arrow_grey_light" />
+
+        <TextView
+            android:id="@+id/filterAvailabilityTV"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:gravity="center_vertical"
+            android:text="@string/availability"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/filterOthersTV" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/underLineColor"
+            app:layout_constraintTop_toBottomOf="@+id/filterAvailabilityTV" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/filterAvailabilityTV"
+            app:layout_constraintEnd_toEndOf="@+id/filterAvailabilityTV"
+            app:layout_constraintTop_toTopOf="@+id/filterAvailabilityTV"
+            app:srcCompat="@drawable/ic_down_arrow_grey_light" />
+    -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

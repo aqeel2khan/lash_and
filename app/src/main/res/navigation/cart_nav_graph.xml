@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/productFrag_graph"
+    app:startDestination="@id/myCartFragment">
+
+    <fragment
+        android:id="@+id/paymentWebViewFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.cart.payment.PaymentWebViewFragment"
+        android:label="PaymentWebViewFragment">
+        <action
+            android:id="@+id/action_paymentWebViewFragment_to_orderConfirmedFragment"
+            app:destination="@id/orderConfirmedFragment" />
+        <argument
+            android:name="paymentUrl"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderConfirmedFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.orderconfirmed.OrderConfirmedFragment"
+        android:label="OrderConfirmedFragment">
+        <action
+            android:id="@+id/action_orderConfirmedFragment_pop_including_myCartFragment"
+            app:popUpTo="@id/myCartFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/myCartFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.cart.MyCartFragment"
+        android:label="MyCartFragment"
+        tools:layout="@layout/fragment_my_cart">
+        <action
+            android:id="@+id/action_myCartFragment_to_cartAddressFragment"
+            app:destination="@id/cartAddressFragment" />
+        <action
+            android:id="@+id/action_myCartFragment_to_guestCreateUserFragment"
+            app:destination="@id/guestCreateUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartAddressFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.cart.address.CartAddressFragment"
+        android:label="CartAddressFragment"
+        tools:layout="@layout/cart_adress_fragment">
+        <action
+            android:id="@+id/action_cartAddressFragment_to_editAddressFragment"
+            app:destination="@id/editAddressFragment" />
+        <action
+            android:id="@+id/action_cartAddressFragment_to_deliveryMethodFragment"
+            app:destination="@id/deliveryMethodFragment" />
+        <action
+            android:id="@+id/action_cartAddressFragment_to_paymentMethodFragment"
+            app:destination="@id/paymentMethodFragment" />
+        <argument
+            android:name="isShippingAddressNeeded"
+            app:argType="boolean" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/editAddressFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.edit_address.AddressInputFragment"
+        tools:layout="@layout/fragment_edit_address">
+        <argument
+            android:name="address"
+            app:argType="com.cosmetics.domain.model.home.profile.Address"
+            app:nullable="true" />
+        <argument
+            android:name="type"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_editAddressFragment_to_deliveryMethodFragment"
+            app:destination="@id/deliveryMethodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkOutFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.checkout.CheckOutFragment"
+        tools:layout="@layout/fragment_check_out">
+        <argument
+            android:name="paymentMethod"
+            app:argType="com.cosmetics.domain.model.product.cart.SetPaymentMethodRequest" />
+        <action
+            android:id="@+id/action_checkOutFragment_to_orderConfirmedFragment"
+            app:destination="@id/orderConfirmedFragment" />
+        <action
+            android:id="@+id/action_checkOutFragment_to_paymentWebViewFragment"
+            app:destination="@id/paymentWebViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deliveryMethodFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.cart.delivery.DeliveryMethodFragment"
+        android:label="DeliveryMethodFragment"
+        tools:layout="@layout/delivery_method_fragment">
+        <action
+            android:id="@+id/action_deliveryMethodFragment_to_paymentMethodFragment"
+            app:destination="@id/paymentMethodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentMethodFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.cart.paymentmethod.PaymentMethodFragment"
+        android:label="PaymentMethodFragment"
+        tools:layout="@layout/payment_method_fragment">
+        <action
+            android:id="@+id/action_paymentMethodFragment_to_checkOutFragment"
+            app:destination="@id/checkOutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/guestCreateUserFragment"
+        android:name="com.cosmetics.lush.ui.homemodule.guest.GuestCreateUserFragment"
+        android:label="GuestCreateUserFragment"
+        tools:layout="@layout/fragment_guest_create_user">
+        <action
+            android:id="@+id/action_guestCreateUserFragment_to_editAddressFragment"
+            app:destination="@id/editAddressFragment" />
+        <action
+            android:id="@+id/action_guestCreateUserFragment_to_deliveryMethodFragment"
+            app:destination="@id/deliveryMethodFragment" />
+        <action
+            android:id="@+id/action_guestCreateUserFragment_to_paymentMethodFragment"
+            app:destination="@id/paymentMethodFragment" />
+        <argument
+            android:name="isShippingAddressNeeded"
+            app:argType="boolean" />
+    </fragment>
+
+</navigation>

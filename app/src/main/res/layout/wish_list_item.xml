@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.cosmetics.domain.model.product.wishlist.ProductWishList" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="15dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="6dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp">
+
+            <ImageView
+                android:id="@+id/imageViewRemove"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/oval_grey_bg"
+                android:padding="7dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_close_grey" />
+
+            <ImageView
+                android:id="@+id/productIV"
+                placeholder="@{@drawable/placeholder_product}"
+                setImageWithPlaceholder="@{product.thumb}"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_marginStart="@dimen/dimen_2"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:layout_marginEnd="@dimen/dimen_2"
+                android:layout_marginBottom="@dimen/dimen_5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/grey_300"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productIV" />
+
+            <TextView
+                android:id="@+id/productNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/helvetica_neue"
+                android:includeFontPadding="false"
+                android:text="@{product.formattedName}"
+                android:textColor="@color/greyTextNormal"
+                android:textSize="16sp"
+                app:layout_constraintHorizontal_weight="0.6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productIV" />
+
+            <TextView
+                android:id="@+id/productSubTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/helvetica_neue_medium"
+                android:includeFontPadding="false"
+                android:text="@{product.model}"
+                android:textColor="@color/greyTextNormal"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@+id/productNameTV"
+                app:layout_constraintStart_toEndOf="@+id/productNameTV"
+                app:layout_constraintTop_toTopOf="@+id/productNameTV" />
+
+            <TextView
+                android:id="@+id/productPriceTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/helvetica_neue_medium"
+                android:text="@{product.getFinalePrice()}"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productNameTV" />
+
+            <View
+                android:id="@+id/dividerView"
+                android:layout_width="1dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="10dp"
+                android:background="@color/underLineColor"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/productPriceTV"
+                app:layout_constraintStart_toEndOf="@+id/productPriceTV"
+                app:layout_constraintTop_toTopOf="@+id/productPriceTV" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/productRB"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:isIndicator="true"
+                android:max="5"
+                android:progressTint="@android:color/black"
+                android:rating="@{product.rating}"
+                app:layout_constraintBottom_toBottomOf="@id/productPriceTV"
+                app:layout_constraintStart_toEndOf="@id/dividerView"
+                app:layout_constraintTop_toTopOf="@+id/productPriceTV" />
+
+            <TextView
+                android:id="@+id/productReviewsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/helvetica_neue"
+                android:text="@{@string/no_reviews(product.reviews)}"
+                android:textColor="@color/grey_500"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/productPriceTV"
+                app:layout_constraintStart_toEndOf="@id/productRB"
+                app:layout_constraintTop_toTopOf="@+id/productPriceTV" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,69 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.6.21'
+    ext {
+        // App Version
+        versionCode = 1
+        versionName = "1.0"
+        // SDK and tools
+        compileSdkVersion = 33
+        minSdkVersion = 21
+        targetSdkVersion = 28
+
+        //App Dependencies
+        androidGradlePluginVersion = '3.6.1'
+        appcompatVersion = '1.2.0'
+        cardViewVersion = '1.0.0'
+        constraintLayoutVersion = '2.0.4'
+        duoNavigationDrawerVersion = '3.0.0'
+        espressoVersion = '3.2.0-alpha02'
+        junitVersion = '4.12'
+        koinVersion = '2.0.1'
+        kotlinVersion = '1.3.30'
+        ktxVersion = '1.3.2'
+        legacySupport = '1.0.0'
+        lifecycleVersion = '2.2.0'
+        materialVersion = '1.3.0-alpha03'
+        materialSearchViewVersion = '1.4.0'
+        navigationVersion = '2.4.1'
+        okhttpVersion = '3.11.0'
+        pagerIndicatorViewVersion = '1.0.1'
+        recyclerViewVersion = '1.2.0-alpha06'
+        retrofitVersion = '2.6.2'
+        roundedImageViewVersion = '2.3.0'
+        runnerVersion = '1.1.2-alpha02'
+        slidingNavVersion = '1.1.0'
+        glideVersion = '4.11.0'
+        paging_version = "2.1.1"
+    }
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.android.tools.build:gradle:7.1.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.5.2'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url 'https://jitpack.io'
+        }
+        maven {
+            url "https://dl.bintray.com/infideap2/Drawer-Behavior"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.cosmetics.lush.ui.homemodule.orders.MyOrdersViewModel" />
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/my_order_header_scene">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/profileIV"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/profile_default"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewBlackEdit"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/oval_black_bg"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/profileIV"
+            app:layout_constraintEnd_toEndOf="@+id/profileIV"
+            app:layout_constraintStart_toEndOf="@+id/profileIV"
+            app:layout_constraintTop_toTopOf="@+id/profileIV"
+            app:srcCompat="@drawable/ic_edit_white" />
+
+        <TextView
+            android:id="@+id/userNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:text="@{viewModel.name}"
+            android:textColor="@color/greyTextNormal"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileIV"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/userEmailTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/helvetica_neue"
+            android:text="@{viewModel.email}"
+            android:textColor="@color/greyTextNormal"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userNameTV" />
+
+        <TextView
+            android:id="@+id/orderHistoryTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_25"
+            android:background="@color/grey_200"
+            android:fontFamily="@font/helvetica_neue"
+            android:gravity="center"
+            android:letterSpacing="0.1"
+            android:paddingTop="@dimen/dimen_15"
+            android:paddingBottom="@dimen/dimen_15"
+            android:text="@string/order_history"
+            android:textColor="@color/greyTextNormal"
+            android:textSize="@dimen/font_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userEmailTV" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orderHistoryRV"
+            goneUnlessOnMotionLayout="@{viewModel.isUserLoggedIn}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:paddingTop="@dimen/dimen_6"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderHistoryTV"
+            tools:itemCount="1"
+            tools:listitem="@layout/current_order_item" />
+
+        <include
+            android:id="@+id/containerLoginPrompt"
+            goneUnlessOnMotionLayout="@{!viewModel.isUserLoggedIn}"
+            layout="@layout/user_login_prompt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderHistoryTV" />
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

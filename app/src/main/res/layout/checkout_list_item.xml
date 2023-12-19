@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.cosmetics.domain.model.product.cart.Product" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/productIV"
+            placeholder="@{@drawable/placeholder_product}"
+            setImageWithPlaceholder="@{model.image}"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/productNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:text="@{model.name}"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/productIV"
+            app:layout_constraintStart_toEndOf="@+id/productIV"
+            app:layout_constraintTop_toTopOf="@+id/productIV" />
+
+        <TextView
+            android:id="@+id/itemPriceTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/helvetica_neue"
+            android:text="@string/item_price"
+            android:textColor="@color/greyTextNormal"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/productNameTV"
+            app:layout_constraintTop_toBottomOf="@+id/productNameTV" />
+
+        <TextView
+            android:id="@+id/itemPriceValueTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica_neue"
+            android:text="@{model.price}"
+            android:textColor="@color/greyTextNormal"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/itemPriceTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/itemPriceTV" />
+
+        <TextView
+            android:id="@+id/quantityTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/helvetica_neue"
+            android:text="@string/quantity"
+            android:textColor="@color/greyTextNormal"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/productNameTV"
+            app:layout_constraintTop_toBottomOf="@+id/itemPriceTV" />
+
+        <TextView
+            android:id="@+id/quantityValueTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica_neue"
+            android:text="@{model.quantity}"
+            android:textColor="@color/greyTextNormal"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/quantityTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/quantityTV" />
+
+        <TextView
+            android:id="@+id/totalCostTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/helvetica_neue"
+            android:text="@string/total_cost"
+            android:textColor="@color/greyTextNormal"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/productNameTV"
+            app:layout_constraintTop_toBottomOf="@+id/quantityTV" />
+
+        <TextView
+            android:id="@+id/totalCostValueTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica_neue_bold"
+            android:text="@{model.total}"
+            android:textColor="@color/greyTextNormal"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/totalCostTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/totalCostTV" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drawer_bg"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/dimen_20">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/profileIV"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/profile_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/oval_black_bg"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/profileIV"
+            app:layout_constraintEnd_toEndOf="@+id/profileIV"
+            app:layout_constraintStart_toEndOf="@+id/profileIV"
+            app:layout_constraintTop_toTopOf="@+id/profileIV"
+            app:srcCompat="@drawable/ic_edit_white" />
+
+        <TextView
+            android:id="@+id/userNameTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_25"
+            android:ellipsize="end"
+            android:fontFamily="@font/helvetica_neue_medium"
+            android:text="@string/guest"
+            android:textColor="@color/greyTextNormal"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/userEmailTV"
+            app:layout_constraintEnd_toStartOf="@+id/guide"
+            app:layout_constraintStart_toEndOf="@+id/profileIV"
+            app:layout_constraintTop_toTopOf="@+id/profileIV"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/userEmailTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/helvetica_neue"
+            android:textColor="@color/greyTextOpacity"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/profileIV"
+            app:layout_constraintEnd_toStartOf="@+id/guide"
+            app:layout_constraintStart_toStartOf="@+id/userNameTV"
+            app:layout_constraintTop_toBottomOf="@+id/userNameTV" />
+
+        <TextView
+            android:id="@+id/loginButton"
+            style="@style/CommonDarkButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:background="@color/black"
+            android:paddingStart="@dimen/dimen_15"
+            android:paddingTop="@dimen/dimen_5"
+            android:paddingEnd="@dimen/dimen_15"
+            android:paddingBottom="@dimen/dimen_5"
+            android:text="@string/login"
+            android:textSize="@dimen/font_12"
+            app:layout_constraintBottom_toBottomOf="@+id/profileIV"
+            app:layout_constraintStart_toStartOf="@+id/userNameTV"
+            app:layout_constraintTop_toBottomOf="@+id/userNameTV" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/profileGrp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="profileIV,userNameTV,userEmailTV" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/myOrdersTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:ellipsize="end"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:paddingTop="@dimen/dimen_8"
+            android:paddingBottom="@dimen/dimen_8"
+            app:layout_constrainedWidth="true"
+            android:background="@color/grey_100"
+            android:fontFamily="@font/helvetica_neue"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
+            android:text="@string/my_orders"
+            android:textAllCaps="false"
+            android:textColor="@color/grey_text_selector"
+            android:textSize="11sp"
+            app:drawableStartCompat="@drawable/ic_drawer_orders"
+            app:layout_constraintEnd_toStartOf="@+id/guide"
+            app:layout_constraintStart_toEndOf="@+id/wishListTV"
+            app:layout_constraintTop_toBottomOf="@+id/profileIV" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/wishListTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:ellipsize="end"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:paddingTop="@dimen/dimen_8"
+            android:paddingBottom="@dimen/dimen_8"
+            app:layout_constrainedWidth="true"
+            android:background="@color/grey_100"
+            android:fontFamily="@font/helvetica_neue"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="0dp"
+            android:text="@string/wishlist"
+            android:textAllCaps="false"
+            android:textColor="@color/grey_text_selector"
+            android:textSize="11sp"
+            app:drawableStartCompat="@drawable/ic_drawer_wishlist"
+            app:layout_constraintEnd_toStartOf="@+id/myOrdersTV"
+            app:layout_constraintStart_toEndOf="@+id/homeTV"
+            app:layout_constraintTop_toBottomOf="@+id/profileIV" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/homeTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:ellipsize="end"
+            android:layout_marginTop="10dp"
+            android:paddingTop="@dimen/dimen_8"
+            android:paddingBottom="@dimen/dimen_8"
+            app:layout_constrainedWidth="true"
+            android:background="@color/grey_100"
+            android:fontFamily="@font/helvetica_neue"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="0dp"
+            android:text="@string/home"
+            android:textAllCaps="false"
+            android:textColor="@color/grey_text_selector"
+            android:textSize="11sp"
+            app:drawableStartCompat="@drawable/ic_home_small"
+
+            app:layout_constraintEnd_toStartOf="@+id/wishListTV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileIV" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/headerBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="homeTV,wishListTV,myOrdersTV" />
+
+
+        <TextView
+            android:id="@+id/shopNowTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/helvetica_neue_bold"
+            android:text="@string/shop_now"
+            android:textColor="@color/greyTextNormal"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headerBarrier" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/drawerCategoryRV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toStartOf="@+id/guide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shopNowTV"
+            tools:listitem="@layout/drawer_category_item" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/findLushStoresTV"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/white"
+            android:drawablePadding="-35sp"
+            android:fontFamily="@font/helvetica_neue_bold"
+            android:gravity="center"
+            android:paddingStart="30dp"
+            android:paddingEnd="0dp"
+            android:text="@string/find_lush_stores"
+            android:textColor="@color/greyTextNormal"
+            android:textSize="13sp"
+            app:drawableStartCompat="@drawable/ic_drawer_lushstore"
+            app:layout_constraintEnd_toStartOf="@+id/guide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/drawerCategoryRV" />
+
+        <TextView
+            android:id="@+id/appTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/helvetica_neue_bold"
+            android:text="@string/app"
+            android:textColor="@color/greyTextNormal"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/findLushStoresTV" />
+
+        <TextView
+            android:id="@+id/settingsItemTV"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/drawer_item_height"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/helvetica_neue"
+            android:gravity="center_vertical"
+            android:text="@string/settings"
+            android:drawableEnd="@drawable/ic_next_arrow_grey"
+            android:textDirection="locale"
+            android:textColor="@color/grey_text_selector"
+            android:textSize="@dimen/drawer_item_text_size"
+            app:layout_constraintEnd_toStartOf="@+id/guide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appTV" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/underLineColor"
+            app:layout_constraintEnd_toStartOf="@+id/guide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settingsItemTV" />
+
+        <TextView
+            android:id="@+id/contactUsTV"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/drawer_item_height"
+            android:fontFamily="@font/helvetica_neue"
+            android:gravity="center_vertical"
+            android:text="@string/contact_us"
+            android:textColor="@color/grey_text_selector"
+            android:textSize="@dimen/drawer_item_text_size"
+            android:drawableEnd="@drawable/ic_next_arrow_grey"
+            android:textDirection="locale"
+            app:layout_constraintEnd_toStartOf="@+id/guide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settingsItemTV" />
+
+        <View
+            android:id="@+id/viewBottomContactUs"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/underLineColor"
+            app:layout_constraintEnd_toStartOf="@+id/guide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactUsTV" />
+
+
+        <!-- <TextView
+             android:id="@+id/aboutUsTV"
+             android:layout_width="0dp"
+             android:layout_height="@dimen/drawer_item_height"
+             android:drawableEnd="@drawable/ic_next_arrow_grey"
+             android:fontFamily="@font/helvetica_neue"
+             android:gravity="center_vertical"
+             android:text="@string/about_us"
+             android:textColor="@color/grey_text_selector"
+             android:textDirection="locale"
+             android:textSize="@dimen/drawer_item_text_size"
+             app:layout_constraintEnd_toStartOf="@+id/guide"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/contactUsTV" />
+
+         <View
+             android:id="@+id/viewBottomAboutUs"
+             android:layout_width="0dp"
+             android:layout_height="1dp"
+             android:background="@color/underLineColor"
+             app:layout_constraintEnd_toStartOf="@+id/guide"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/aboutUsTV" />
+
+         <TextView
+             android:id="@+id/refundNdReturnTV"
+             android:layout_width="0dp"
+             android:layout_height="@dimen/drawer_item_height"
+             android:drawableEnd="@drawable/ic_next_arrow_grey"
+             android:fontFamily="@font/helvetica_neue"
+             android:gravity="center_vertical"
+             android:text="@string/return_refund_us"
+             android:textColor="@color/grey_text_selector"
+             android:textDirection="locale"
+             android:textSize="@dimen/drawer_item_text_size"
+             app:layout_constraintEnd_toStartOf="@+id/guide"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/aboutUsTV" />
+
+         <View
+             android:id="@+id/viewBottomrefundNdReturn"
+             android:layout_width="0dp"
+             android:layout_height="1dp"
+             android:background="@color/underLineColor"
+             app:layout_constraintEnd_toStartOf="@+id/guide"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/refundNdReturnTV" />
+
+         <TextView
+             android:id="@+id/privacyPolicyTV"
+             android:layout_width="0dp"
+             android:layout_height="@dimen/drawer_item_height"
+             android:drawableEnd="@drawable/ic_next_arrow_grey"
+             android:fontFamily="@font/helvetica_neue"
+             android:gravity="center_vertical"
+             android:text="@string/privacy_policy"
+             android:textColor="@color/grey_text_selector"
+             android:textDirection="locale"
+             android:textSize="@dimen/drawer_item_text_size"
+             app:layout_constraintEnd_toStartOf="@+id/guide"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/refundNdReturnTV" />
+
+         <View
+             android:id="@+id/viewBottomPrivacyPolicy"
+             android:layout_width="0dp"
+             android:layout_height="1dp"
+             android:background="@color/underLineColor"
+             app:layout_constraintEnd_toStartOf="@+id/guide"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/privacyPolicyTV" />
+
+         <TextView
+             android:id="@+id/termsConditionTV"
+             android:layout_width="0dp"
+             android:layout_height="@dimen/drawer_item_height"
+             android:drawableEnd="@drawable/ic_next_arrow_grey"
+             android:fontFamily="@font/helvetica_neue"
+             android:gravity="center_vertical"
+             android:text="@string/terms_conditions"
+             android:textColor="@color/grey_text_selector"
+             android:textDirection="locale"
+             android:textSize="@dimen/drawer_item_text_size"
+             app:layout_constraintEnd_toStartOf="@+id/guide"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/privacyPolicyTV" />
+
+         <View
+             android:id="@+id/viewBottomtermsCondition"
+             android:layout_width="0dp"
+             android:layout_height="1dp"
+             android:background="@color/underLineColor"
+             app:layout_constraintEnd_toStartOf="@+id/guide"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/termsConditionTV" />-->
+
+
+        <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/drawerAppInfoRV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toStartOf="@+id/guide"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewBottomContactUs"
+                    tools:listitem="@layout/drawer_category_item" />
+
+
+        <TextView
+            android:id="@+id/newsletterTV"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/drawer_item_height"
+            android:fontFamily="@font/helvetica_neue"
+            android:gravity="center_vertical"
+            android:text="@string/newsletter"
+            android:textColor="@color/grey_text_selector"
+            android:textSize="@dimen/drawer_item_text_size"
+            android:drawableEnd="@drawable/ic_next_arrow_grey"
+            android:textDirection="locale"
+            app:layout_constraintEnd_toStartOf="@+id/guide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/drawerAppInfoRV" />
+
+        <View
+            android:id="@+id/viewBottomnewsletterUs"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/underLineColor"
+            app:layout_constraintEnd_toStartOf="@+id/guide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactUsTV" />
+<!--
+        <TextView
+            android:id="@+id/careersAtLushTV"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/drawer_item_height"
+            android:fontFamily="@font/helvetica_neue"
+            android:gravity="center_vertical"
+            android:text="@string/careers_at_lush"
+            android:textColor="@color/grey_text_selector"
+            android:textSize="@dimen/drawer_item_text_size"
+            android:drawableEnd="@drawable/ic_next_arrow_grey"
+            android:textDirection="locale"
+            app:layout_constraintEnd_toStartOf="@+id/guide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newsletterTV" />
+
+        <View
+            android:id="@+id/viewBottomCareers"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/underLineColor"
+            app:layout_constraintEnd_toStartOf="@+id/guide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactUsTV" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

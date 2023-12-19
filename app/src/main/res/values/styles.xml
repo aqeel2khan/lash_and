@@ -1,0 +1,148 @@
+<resources>
+
+    <style name="Spinner" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:textColor">@color/greyTextPressed</item>
+    </style>
+
+
+    <style name="SettingSwitchStyle" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/black</item>
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/grey_400</item>
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">@color/grey_400</item>
+    </style>
+
+    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="colorControlNormal">@color/underLineColor</item>
+        <item name="colorControlActivated">@color/underLineColor</item>
+        <item name="colorControlHighlight">@color/underLineColor</item>
+    </style>
+
+    <style name="TextLabel" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/helvetica_neue</item>
+    </style>
+
+    <style name="TitleTextProductDetails" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">@dimen/font_17</item>
+        <item name="android:textColor">@color/greyTextNormal</item>
+        <item name="android:fontFamily">@font/helvetica_neue</item>
+    </style>
+
+    <style name="AddAddressTextStyle">
+        <item name="android:textSize">@dimen/font_15</item>
+        <item name="android:fontFamily">@font/helvetica_neue_medium</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/greyTextNormal</item>
+    </style>
+
+    <style name="AddAddressTextStyle.AddAddressInputField">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundTint">@color/underLineColor</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="CommonDarkButton">
+        <item name="android:textSize">@dimen/font_15</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">@dimen/dimen_15</item>
+        <item name="android:paddingBottom">@dimen/dimen_15</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:backgroundTint">@color/black</item>
+        <item name="android:fontFamily">@font/helvetica_neue_bold</item>
+    </style>
+
+    <style name="ProductOptionEditText">
+        <item name="android:gravity">top</item>
+        <item name="android:padding">@dimen/dimen_5</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:background">@drawable/rounded_border_edittext</item>
+        <item name="android:fontFamily">@font/helvetica_neue</item>
+    </style>
+
+    <style name="ProductOptionButton">
+        <item name="android:textSize">@dimen/font_15</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">@dimen/dimen_15</item>
+        <item name="android:paddingTop">@dimen/dimen_8</item>
+        <item name="android:paddingBottom">@dimen/dimen_8</item>
+        <item name="android:paddingStart">@dimen/dimen_20</item>
+        <item name="android:paddingEnd">@dimen/dimen_20</item>
+        <item name="android:background">@drawable/background_select_date</item>
+        <item name="android:fontFamily">@font/helvetica_neue_medium</item>
+    </style>
+
+    <style name="TextLabelNoDataFound">
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/helvetica_neue</item>
+        <item name="android:text">@string/no_record_found</item>
+    </style>
+
+    <style name="TextLabelDarkTittle">
+        <item name="android:textSize">@dimen/font_20</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/helvetica_neue_bold</item>
+    </style>
+
+    <style name="TextLabelMediumDarkTittle">
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/helvetica_neue_medium</item>
+    </style>
+
+    <style name="RadioButtonTextLabelWhiteTittle">
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/helvetica_neue</item>
+    </style>
+
+    <style name="ErrorTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/greyTextNormal</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/lush_font</item>
+    </style>
+
+    <style name="CategoryTitleTextAppearance">
+        <item name="android:textColor">@color/white_text_selector</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:fontFamily">@font/lush_font</item>
+        <item name="android:background">@color/black_variant</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ProductCheckoutTextStyleBold">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/font_17</item>
+        <item name="android:fontFamily">@font/helvetica_neue_bold</item>
+    </style>
+
+    <style name="WhiteBoldTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/font_24</item>
+        <item name="android:fontFamily">@font/helvetica_neue_bold</item>
+    </style>
+
+    <style name="ProductCheckoutTextStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/font_14</item>
+        <item name="android:fontFamily">@font/helvetica_neue</item>
+    </style>
+
+</resources>
